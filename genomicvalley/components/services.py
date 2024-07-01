@@ -66,10 +66,10 @@ def services_section() -> rx.Component:
                 size="5", align="center", margin_bottom="1em", color="gray"
             ),width="60%"),
             rx.grid(
-                card("heart-pulse", "Personalized Healthcare", "Personalized healthcare at Genomics Valley Bharat Limited is centered on tailoring medical treatment to individual patients based on their unique genetic profiles."),
+                card("heart-pulse", "Personalized Healthcare", "Personalized healthcare at Genomic Valley is centered on tailoring medical treatment to individual patients based on their unique genetic profiles."),
                 card("dna", "Genetic Disease Predisposition", "Our genetic disease predisposition services focus on identifying individuals' susceptibility to various hereditary conditions."),
-                card("hospital", "Community Health Support", "Community health support at Genomics Valley Bharat Limited aims to improve public health outcomes through comprehensive genomic screening programs."),
-                card("brain", "AI-Based Genome Healthcare", "At Genomics Valley Bharat Limited, we are pioneering AI-based genome healthcare research to revolutionize the way genetic data is analyzed and interpreted."),
+                card("hospital", "Community Health Support", "Community health support at Genomic Valley aims to improve public health outcomes through comprehensive genomic screening programs."),
+                card("brain", "AI-Based Genome Healthcare", "At Genomic Valley , we are pioneering AI-based genome healthcare research to revolutionize the way genetic data is analyzed and interpreted."),
                 card("circle-fading-plus", "Metagenomics and Healthcare", "Our metagenomics research focuses on studying the collective genomes of microbial communities within the human body and their impact on health and disease."),
                 card("microscope", "Extramural Research Project", "Our extramural research projects involve collaborating with external academic institutions, research organizations, and industry partners to advance genomic science."),
                 columns = "3",
@@ -99,10 +99,10 @@ def services_section() -> rx.Component:
                     width="90%"
                 ),
                 rx.vstack(
-                    mobile_card("heart-pulse", "Personalized Healthcare", "Personalized healthcare at Genomics Valley Bharat Limited is centered on tailoring medical treatment to individual patients based on their unique genetic profiles."),
+                    mobile_card("heart-pulse", "Personalized Healthcare", "Personalized healthcare at Genomic Valley is centered on tailoring medical treatment to individual patients based on their unique genetic profiles."),
                     mobile_card("dna", "Genetic Disease Predisposition", "Our genetic disease predisposition services focus on identifying individuals' susceptibility to various hereditary conditions."),
-                    mobile_card("hospital", "Community Health Support", "Community health support at Genomics Valley Bharat Limited aims to improve public health outcomes through comprehensive genomic screening programs."),
-                    mobile_card("brain", "AI-Based Genome Healthcare", "At Genomics Valley Bharat Limited, we are pioneering AI-based genome healthcare research to revolutionize the way genetic data is analyzed and interpreted."),
+                    mobile_card("hospital", "Community Health Support", "Community health support at Genomic Valley aims to improve public health outcomes through comprehensive genomic screening programs."),
+                    mobile_card("brain", "AI-Based Genome Healthcare", "At Genomic Valley , we are pioneering AI-based genome healthcare research to revolutionize the way genetic data is analyzed and interpreted."),
                     mobile_card("circle-fading-plus", "Metagenomics and Healthcare", "Our metagenomics research focuses on studying the collective genomes of microbial communities within the human body and their impact on health and disease."),
                     mobile_card("microscope", "Extramural Research Project", "Our extramural research projects involve collaborating with external academic institutions, research organizations, and industry partners to advance genomic science."),
                     spacing="4",

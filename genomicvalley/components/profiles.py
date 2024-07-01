@@ -90,7 +90,7 @@ def romasha_gupta_profile():
             
             rx.box(
                 rx.heading("Education", size="4"),
-                rx.text("Postgraduate researcher in bioinformatics")
+                rx.text("Postgraduate scientific researcher in bioinformatics")
             ),
             
             rx.box(

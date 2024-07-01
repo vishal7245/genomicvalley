@@ -76,7 +76,7 @@ def accordion_faq()-> rx.Component:
 
             <div class="accordion">
                 <div class="accordion-item">
-                    <button class="accordion-header">What are the primary diagnostic services offered by Genomics Valley Bharat Limited?</button>
+                    <button class="accordion-header">What are the primary diagnostic services offered by Genomic Valley?</button>
                     <div class="accordion-content">
                         <p>We specialize in Next-Generation Sequencing (NGS)-based molecular diagnostics, focusing on identifying genetic mutations and abnormalities with advanced AI integration. Our services enable early detection and personalized treatment plans, particularly in oncology.</p>
                     </div>
@@ -94,13 +94,13 @@ def accordion_faq()-> rx.Component:
                     </div>
                 </div>
                 <div class="accordion-item">
-                    <button class="accordion-header">How does Genomics Valley Bharat Limited support community health through genomic initiatives?</button>
+                    <button class="accordion-header">How does Genomic Valley support community health through genomic initiatives?</button>
                     <div class="accordion-content">
                         <p>We envision to integrate AI into NGS to conduct population-wide genetic screening aimed at improving public health outcomes. Our initiatives will help identify prevalent health risks and design targeted community health programs for disease prevention and management.</p>
                     </div>
                 </div>
                 <div class="accordion-item">
-                    <button class="accordion-header">How does Genomics Valley Bharat Limited contribute to oncology research?</button>
+                    <button class="accordion-header">How does Genomic Valley contribute to oncology research?</button>
                     <div class="accordion-content">
                         <p>We leverage over a decade of experience in NGS and AI to pioneer advancements in cancer research. Our focus includes uncovering novel biomarkers and genetic insights, collaborating with leading institutions to develop more effective diagnostic tools and therapeutic strategies.</p>
                     </div>
@@ -222,7 +222,7 @@ def mobile_accordion_faq()-> rx.Component:
 
             <div class="accordion">
                 <div class="accordion-item">
-                    <button class="accordion-header">What are the primary diagnostic services offered by Genomics Valley Bharat Limited?</button>
+                    <button class="accordion-header">What are the primary diagnostic services offered by Genomic Valley?</button>
                     <div class="accordion-content">
                         <p>We specialize in Next-Generation Sequencing (NGS)-based molecular diagnostics, focusing on identifying genetic mutations and abnormalities with advanced AI integration. Our services enable early detection and personalized treatment plans, particularly in oncology.</p>
                     </div>
@@ -240,13 +240,13 @@ def mobile_accordion_faq()-> rx.Component:
                     </div>
                 </div>
                 <div class="accordion-item">
-                    <button class="accordion-header">How does Genomics Valley Bharat Limited support community health through genomic initiatives?</button>
+                    <button class="accordion-header">How does Genomic Valley support community health through genomic initiatives?</button>
                     <div class="accordion-content">
                         <p>We envision to integrate AI into NGS to conduct population-wide genetic screening aimed at improving public health outcomes. Our initiatives will help identify prevalent health risks and design targeted community health programs for disease prevention and management.</p>
                     </div>
                 </div>
                 <div class="accordion-item">
-                    <button class="accordion-header">How does Genomics Valley Bharat Limited contribute to oncology research?</button>
+                    <button class="accordion-header">How does Genomic Valley contribute to oncology research?</button>
                     <div class="accordion-content">
                         <p>We leverage over a decade of experience in NGS and AI to pioneer advancements in cancer research. Our focus includes uncovering novel biomarkers and genetic insights, collaborating with leading institutions to develop more effective diagnostic tools and therapeutic strategies.</p>
                     </div>
