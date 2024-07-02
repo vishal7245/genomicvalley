@@ -7,7 +7,7 @@
 # to publicly accessible domain where app will be hosted
 services:
   app:
-    image: local/genomicvalley
+    image: local/reflex-app
     environment:
       DB_URL: sqlite:///data/reflex.db
     build:
