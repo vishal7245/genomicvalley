@@ -1,9 +1,5 @@
-# This docker file is intended to be used with docker compose to deploy a production
-# instance of a Reflex app.
-
 # Stage 1: init
 FROM python:3.11 as init
-
 ARG uv=/root/.cargo/bin/uv
 
 # Install `uv` for faster package boostrapping
@@ -13,7 +9,7 @@ RUN /install.sh && rm /install.sh
 # Copy local context to `/app` inside container (see .dockerignore)
 WORKDIR /app
 COPY . .
-RUN mkdir -p /app/data /app/uploaded_files
+RUN mkdir -p /app/data /app/uploaded_files /app/alembic
 
 # Create virtualenv which will be copied into final container
 ENV VIRTUAL_ENV=/app/.venv
@@ -34,14 +30,27 @@ RUN mv .web/_static /tmp/_static
 RUN rm -rf .web && mkdir .web
 RUN mv /tmp/_static .web/_static
 
-# Stage 2: copy artifacts into slim image 
+# Stage 2: copy artifacts into slim image
 FROM python:3.11-slim
 WORKDIR /app
-RUN adduser --disabled-password --home /app reflex
-COPY --chown=reflex --from=init /app /app
+
+# Create reflex user and group
+RUN groupadd -r reflex && useradd -r -g reflex reflex
+
 # Install libpq-dev for psycopg2 (skip if not using postgres).
 RUN apt-get update -y && apt-get install -y libpq-dev && rm -rf /var/lib/apt/lists/*
+
+# Copy files from init stage
+COPY --from=init /app /app
+
+# Set correct permissions
+RUN chown -R reflex:reflex /app && \
+    chmod -R 755 /app && \
+    chmod -R 777 /app/data /app/uploaded_files /app/alembic
+
+# Switch to reflex user
 USER reflex
+
 ENV PATH="/app/.venv/bin:$PATH"
 
 # Needed until Reflex properly passes SIGTERM on backend.
