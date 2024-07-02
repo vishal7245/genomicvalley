@@ -1,19 +1,22 @@
 # This Dockerfile is used to deploy a simple single-container Reflex app instance.
 FROM python:3.11
 
-ARG uv=/root/.cargo/bin/uv
+# Set environment variable for virtual environment
+ENV VIRTUAL_ENV=/opt/venv
 
-# Install `uv` for faster package boostrapping
-ENV VIRTUAL_ENV=/usr/local
-ADD --chmod=755 https://astral.sh/uv/install.sh /install.sh
-RUN /install.sh && rm /install.sh
+# Install venv and create a virtual environment
+RUN python -m venv $VIRTUAL_ENV
+
+# Ensure the virtual environment is in the PATH
+ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
 # Copy local context to `/app` inside container (see .dockerignore)
 WORKDIR /app
 COPY . .
 
-# Install app requirements and reflex in the container
-RUN $uv pip install -r requirements.txt
+# Install app requirements in the container
+RUN pip install --upgrade pip
+RUN pip install -r requirements.txt
 
 # Deploy templates and prepare app
 RUN reflex init
