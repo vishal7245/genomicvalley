@@ -14,7 +14,6 @@ services:
     restart: always
 
   app:
-    image: vishal1908/genomicvalley-webserver:latest
     environment:
       DB_URL: postgresql+psycopg2://postgres:secret@db/postgres
       REDIS_URL: redis://redis:6379

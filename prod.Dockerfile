@@ -1,6 +1,3 @@
-# This docker file is intended to be used with docker compose to deploy a production
-# instance of a Reflex app.
-
 # Stage 1: init
 FROM python:3.11 as init
 
@@ -13,15 +10,14 @@ RUN /install.sh && rm /install.sh
 # Copy local context to `/app` inside container (see .dockerignore)
 WORKDIR /app
 COPY . .
-RUN mkdir -p /app/data /app/uploaded_files
 
-# Create virtualenv which will be copied into final container
-ENV VIRTUAL_ENV=/app/.venv
-ENV PATH="$VIRTUAL_ENV/bin:$PATH"
-RUN $uv venv
+# Create virtualenv
+RUN python3 -m venv /app/.venv
 
-# Install app requirements and reflex inside virtualenv
-RUN $uv pip install -r requirements.txt
+# Activate virtualenv and install app requirements
+ENV PATH="/app/.venv/bin:$PATH"
+RUN pip install --upgrade pip setuptools wheel
+RUN pip install -r requirements.txt
 
 # Deploy templates and prepare app
 RUN reflex init
@@ -36,16 +32,23 @@ RUN mv /tmp/_static .web/_static
 
 # Stage 2: copy artifacts into slim image 
 FROM python:3.11-slim
-WORKDIR /app
+
+# Create a non-root user to run the application
 RUN adduser --disabled-password --home /app reflex
-COPY --chown=reflex --from=init /app /app
+
+# Copy application artifacts and virtualenv from init stage
+WORKDIR /app
+COPY --from=init --chown=reflex /app /app
+
 # Install libpq-dev for psycopg2 (skip if not using postgres).
 RUN apt-get update -y && apt-get install -y libpq-dev && rm -rf /var/lib/apt/lists/*
+
+# Switch to non-root user
 USER reflex
+
+# Set PATH to include virtualenv binaries
 ENV PATH="/app/.venv/bin:$PATH"
 
-# Needed until Reflex properly passes SIGTERM on backend.
+# Set stopsingal and command
 STOPSIGNAL SIGKILL
-
-# Always apply migrations before starting the backend.
 CMD reflex db migrate && reflex run --env prod --backend-only
