@@ -52,7 +52,7 @@ type_animation = TypeAnimation.create
 
 
 heading_font = {
-    "font_size": ["3em", "4em", "5em", "6em", "7em"],
+    "font_size": ["1em", "2em", "3em", "4em", "5em"],
     "line_height": ["1.2", "1.1", "1", "0.9", "0.8"],
     "margin_bottom": "0.5em",
 }
@@ -78,7 +78,7 @@ def hero():
                             ],
                             style={
                                 "color": "gray",
-                                "fontSize": ["1em","1.5em", "2em", "2.5em", "3em"],
+                                "fontSize": "2em",
                             },
                         ),
                         rx.hstack(
