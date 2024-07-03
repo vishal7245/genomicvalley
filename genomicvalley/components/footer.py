@@ -18,7 +18,6 @@ def footer_items_1() -> rx.Component:
         footer_item("Our Team", "/about"),
         footer_item("Contact", "/contact"),
         footer_item("FAQs", "/faq"),
-        footer_item("Investor Relations", "/investor-relation"),
         spacing="4",
         text_align="center",
         align_items="center",
