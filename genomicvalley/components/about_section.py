@@ -36,7 +36,7 @@ def about_section() -> rx.Component:
                         rx.image(
                             src="/about-img.jpg",
                             alt="Genomic Valley",
-                            width="700px",
+                            width="50vw",
                             margin_top="2em",
                             padding="1em",
                         ),
@@ -47,7 +47,7 @@ def about_section() -> rx.Component:
                     ),
                     justify_content="center",
                     align_items="center",
-                    width="70%",
+                    width=["100%", "80%"],
                 ),
                 width="100%",
                 display="flex",
