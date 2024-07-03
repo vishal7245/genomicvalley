@@ -82,7 +82,7 @@ def hero():
                             },
                         ),
                         rx.hstack(
-                            rx.button("Brochure", size="4"),
+                            rx.button("Brochure", size="4", on_click=rx.download(url="/Genomic Valley-Brochure-1.pdf")),
                             rx.link(rx.button("Contact Us", size="4", variant="outline"), href="/contact")
                         ),
                         spacing="4",
@@ -131,7 +131,7 @@ def hero():
                     width="100%",
                 ),
                 rx.hstack(
-                    rx.button("Brochure", size="3"),
+                    rx.button("Brochure", size="4", on_click=rx.download(url="/Genomic Valley-Brochure-1.pdf")),
                     rx.link(rx.button("Contact Us", size="3", variant="outline"), href="/contact")
                 ),
                 spacing="6",
