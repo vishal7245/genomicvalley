@@ -88,7 +88,6 @@ def navbar() -> rx.Component:
                             rx.menu.item("Research Services", on_click=lambda: redirect("/research-services")),
                         )
                     ),
-                    navbar_link("Investor Relations", "/investor-relation"),
                     rx.link(
                         rx.button(
                                 rx.text(
@@ -131,7 +130,6 @@ def navbar() -> rx.Component:
                                 rx.menu.item("Research Services", on_click=lambda: redirect("/research-services")),
                             ),
                         ),
-                        rx.menu.item("Investor Relations", on_click=lambda: redirect("/investor-relation")),
                         rx.menu.item("Contact", on_click=lambda: redirect("/contact")),
                     ),
                     justify="end",
