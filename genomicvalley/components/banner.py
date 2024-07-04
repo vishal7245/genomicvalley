@@ -30,7 +30,7 @@ font_size = {
 }
 
 mobile_font_size = {
-    "font_size": "2em",
+    "font_size": "1em",
     "color": "black",
     "padding": "10px",
 }
