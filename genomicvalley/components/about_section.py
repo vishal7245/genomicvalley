@@ -1,10 +1,8 @@
 import reflex as rx
 
-
-card_style = {
+bg_card_style = {
     "background_color": "rgba(39,162,85,0.5);",
 }
-
 
 quote_style = {
     "font_size": "2em",
@@ -52,7 +50,7 @@ def about_section() -> rx.Component:
                 width="100%",
                 display="flex",
                 justify_content="center",
-                style=card_style
+                padding="1em"
             )
         ),
         rx.mobile_and_tablet(
@@ -82,8 +80,8 @@ def about_section() -> rx.Component:
                 width="100%",
                 spacing="4",
                 padding="1em",
-                style=card_style,
                 align_items="center",
             )
         ),
+        style=bg_card_style,
     )

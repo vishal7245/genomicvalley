@@ -93,6 +93,8 @@ def footer() -> rx.Component:
                                     weight="medium",
                                     color="black",
                                 ),
+                                rx.text("Email: support@genomicvalley.in", size="3", weight="bold", color="black"),
+                                rx.text("Phone: +91 98113 41542", size="3", weight="bold", color="black"),
                                 width="450px"
                             ),
                             spacing="4",
@@ -135,6 +137,8 @@ def footer() -> rx.Component:
                             color="black",
                             text_align="center",
                         ),
+                        rx.text("Email: support@genomicvalley.in", size="3", weight="bold", color="black", text_align="center"),
+                        rx.text("Phone: +91 98113 41542", size="3", weight="bold", color="black", text_align="center"),
                         spacing="3",
                         align_items="center",
                         width="100%",

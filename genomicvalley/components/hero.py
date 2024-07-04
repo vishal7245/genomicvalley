@@ -1,41 +1,9 @@
 import reflex as rx
-import json,ast
-
-hero_style = {
-    "width": "100%",
-    "height": "90vh",
-    "background-color":"hsla(231,0%,100%,1);",
-    "background-image":
-"""radial-gradient(at 58% 53%, hsla(147,100%,50%,0.71) 0px, transparent 50%),
-radial-gradient(at 85% 43%, hsla(137,78%,61%,1) 0px, transparent 50%);""",
-    "background-size": "cover",
-    "background-position": "center",
-}
-
-
-# hero_card_style = {
-#     "padding": "2em",
-#     "border_radius": "1em",
-#     "width": "50%",
-#     "height": "50%",
-#     "backdrop-filter": "blur(60px)",
-#     "margin_top": "10em",
-#     "margin_left": "5em",
-# }
-
-hero_font_style = {
-    "background_image": "url('/bg-hero.jpeg')",
-    "text_fill_color": "transparent",
-    "background_clip": "text",
-    "-webkit-background-clip": "text",
-}
-
 
 class TypeAnimation(rx.Component):
     """ReflexTypeAnimation component."""
     tag = "TypeAnimation"
     library = "react-type-animation"
-
     sequence: rx.Var[list]
     speed: rx.Var[int]
     repeat: rx.Var[str] = "infinite"
@@ -46,25 +14,31 @@ class TypeAnimation(rx.Component):
     omit_deletion_animation: rx.Var[bool] = False
     style: dict = {'fontSize': '2em', 'color': "black"}
 
-
-
 type_animation = TypeAnimation.create
 
-
 heading_font = {
-    "font_size": ["1em", "2em", "3em", "4em", "5em"],
+    "font_size": ["1em", "1em", "2em", "3em", "4em"],
     "line_height": ["1.2", "1.1", "1", "0.9", "0.8"],
-    "margin_bottom": "0.5em",
+    "margin_bottom": "5px",
 }
 
-def hero():
+hero_card_style = {
+    "padding": "2em",
+    "border_radius": "1em",
+    "backdrop_filter": "blur(60px)",
+    "background_color": "rgba(255, 255, 255, 0.1)",  # Added for better visibility
+    "max_width": "600px",  # Limit the maximum width
+    "width": "90%",  # Take up 90% of the container width, but not more than max-width
+    "margin_left": "5%",  # Add some left margin
+}
+
+def hero_section():
     return rx.section(
         rx.desktop_only(
-            rx.box(
-                rx.hstack(
-                    # Left side: Main text and button
+                    rx.box(
+                rx.vstack(
                     rx.vstack(
-                        rx.heading("Genomic Valley", color="black", style=heading_font),
+                        rx.heading("Genomic Valley", color="white", style=heading_font),
                         type_animation(
                             sequence=[
                                 'Where Health Meets Technology.',
@@ -78,66 +52,81 @@ def hero():
                             ],
                             style={
                                 "color": "gray",
-                                "fontSize": "2em",
+                                "fontSize": "30px",
                             },
                         ),
                         rx.hstack(
-                            rx.button("Brochure", size="4", on_click=rx.download(url="/Genomic Valley-Brochure-1.pdf")),
-                            rx.link(rx.button("Contact Us", size="4", variant="outline"), href="/contact")
+                            rx.button("Brochure", size="3", on_click=rx.download(url="/Genomic Valley-Brochure-1.pdf")),
+                            rx.link(rx.button("Contact Us", size="3", variant="outline"), href="/contact"),
+                            spacing="4",  # Add spacing between buttons
                         ),
                         spacing="4",
-                        align_items="flex-start",
-                        width="50%",
+                        align_items="flex_start",  # Align items to the start (left) within the vstack
+                        style=hero_card_style,
                     ),
-                    # Right side: Image
-                    rx.image(
-                        src="hero.png",
-                        alt="Hero image",
-                        width="40%",
-                    ),
-                    spacing="8",
-                    align_items="center",
-                    padding="4em",
+                    justify_content="center",  # Center the card vertically
+                    height="100%",  # Take full height of the parent
+                    width="100%",  # Take full width of the parent
                 ),
+                background_image="url('hero-bg.jpg')",
+                background_size="cover",
+                background_position="center",
                 width="100%",
-                height="90vh",
-                padding="4em",
-                style=hero_style,
-            )
+                height="100vh",  # Full viewport height
+                margin="0",
+                padding="0",  # Remove padding from the main box
+            )    
         ),
         rx.mobile_and_tablet(
-            rx.vstack(
-                rx.heading("Genomic Valley", color="black", size="6"),
-                type_animation(
-                    sequence=[
-                        'Where Health Meets Technology.',
-                        1000,
-                        'Where Health Meets Breakthroughs.',
-                        1000,
-                        'Where Health Meets Precision.',
-                        1000,
-                        'Where Health Meets Innovation.',
-                        1000,
-                    ],
-                    size="6",
-                    style={
-                        "color": "gray",
-                        "fontSize": "1em",
-                    },
-                ),
-                rx.image(
-                    src="hero.png",
-                    alt="Hero image",
+                        rx.box(
+                rx.vstack(
+                    rx.vstack(
+                        rx.heading("Genomic Valley", color="white", style= {"fontSize": "30px", "lineHeight": "clamp(1.2, 4vw, 2em)"}),
+                        type_animation(
+                            sequence=[
+                                'Where Health Meets Technology.',
+                                1000,
+                                'Where Health Meets Breakthroughs.',
+                                1000,
+                                'Where Health Meets Precision.',
+                                1000,
+                                'Where Health Meets Innovation.',
+                                1000,
+                            ],
+                            style={
+                                "color": "#d5d2cb",
+                                "fontSize": "15px",  # Responsive font size
+                                "textAlign": "center",  # Center text
+                            },
+                        ),
+                        rx.hstack(  # Changed from hstack to vstack for better mobile layout
+                            rx.button("Brochure", size="3", on_click=rx.download(url="/Genomic Valley-Brochure-1.pdf")),
+                            rx.link(rx.button("Contact Us", size="3", variant="outline"), href="/contact"),
+                            spacing="4",  # Add spacing between buttons
+                        ),
+                        spacing="4",
+                        align_items="center",  # Center items horizontally
+                        style=hero_card_style,
+                    ),
+                    justify_content="center",  # Center the card vertically
+                    align_items="center",  # Center the card horizontally
+                    height="100%",
                     width="100%",
+                    max_width="600px",  # Limit maximum width for larger screens
+                    padding="1rem",  # Add some padding around the content
                 ),
-                rx.hstack(
-                    rx.button("Brochure", size="4", on_click=rx.download(url="/Genomic Valley-Brochure-1.pdf")),
-                    rx.link(rx.button("Contact Us", size="3", variant="outline"), href="/contact")
-                ),
-                spacing="6",
-                align_items="center",
-                padding="2em",
-                text_align="center",
+                background_image="url('hero-bg.jpg')",
+                background_size="cover",
+                background_position="center",
+                width="100%",
+                height="100vh",  # Full viewport height
+                margin="0",
+                padding="0",  # Remove padding from the main box
+                display="flex",
+                justify_content="center",  # Center the content horizontally
+                align_items="center",  # Center the content vertically
             )
-        )
+        ),
+        width="100%",
+        padding="0",
     )

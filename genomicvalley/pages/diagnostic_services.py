@@ -2,12 +2,12 @@ import reflex as rx
 
 
 from genomicvalley.components.footer import footer
-from genomicvalley.components.navbar import navbar
+from genomicvalley.components.navbar_2 import navbar_white as navbar
 from genomicvalley.components.banner import banner
 
 
 paragraph_style = {
-    "font-size": "1.5rem",
+    "font-size": "1.2rem",
     "color": "gray",
     "margin-bottom": "1rem",
     "text-align": "justify",

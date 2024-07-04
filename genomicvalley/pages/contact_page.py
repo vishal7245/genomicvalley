@@ -2,7 +2,7 @@ import reflex as rx
 
 
 from genomicvalley.components.footer import footer
-from genomicvalley.components.navbar import navbar
+from genomicvalley.components.navbar_2 import navbar_white as navbar
 from genomicvalley.components.contact import contact_section
 from genomicvalley.components.banner import banner
 

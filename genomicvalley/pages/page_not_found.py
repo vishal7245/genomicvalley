@@ -1,5 +1,5 @@
 import reflex as rx
-from genomicvalley.components.navbar import navbar
+from genomicvalley.components.navbar_2 import navbar_white as navbar
 from genomicvalley.components.footer import footer
 
 hero_style = {

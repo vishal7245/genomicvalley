@@ -2,7 +2,7 @@ import reflex as rx # type: ignore
 
 
 font_style = {
-    "color": "#FFFFFF",
+    "color": "#565957",
 }
 
 
@@ -36,7 +36,7 @@ def blur_background():
             <style>
             .blur-navbar {
                 border: 1px solid rgba(29, 29, 32, 0.08);
-                background: rgba(0, 70, 35, 0.7);
+                background: HSLA(147,100%,50%,0.1);
                 box-shadow: 0px 24px 54px -17px rgba(13, 12, 16, 0.30), 0px 0px 0px 1px rgba(93, 93, 107, 0.29), 0px 0px 64px 5px rgba(53, 51, 60, 0.30) inset;
                 backdrop-filter: blur(20px);
             }
@@ -49,7 +49,7 @@ def redirect(url):
     return rx.redirect(url)
 
 
-def navbar() -> rx.Component:
+def navbar_white() -> rx.Component:
     return rx.box(
         rx.desktop_only(
             rx.hstack(

@@ -24,7 +24,7 @@ banner_card_style = {
 
 
 font_size = {
-    "font_size": "8em",
+    "font_size": "4em",
     "color": "black",
     "padding": "30px",
 }
