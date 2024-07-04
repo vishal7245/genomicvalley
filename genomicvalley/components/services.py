@@ -59,7 +59,10 @@ def services_section() -> rx.Component:
         rx.desktop_only(
             rx.section(
         rx.vstack(
-            rx.heading("SERVICES", size="5", weight="bold", margin_bottom="1em", color="green"),
+            rx.box(
+                rx.heading("SERVICES", size="5", weight="bold", margin_bottom="1em", color="green", align="center"),
+                width="100%",
+            ),
             rx.heading("Empowering healthcare with NGS and AI", size="8", weight="medium", color="black", margin_bottom="10px",),
             rx.box(rx.text(
                 "We offer advanced Diagnostic Services using Next-Generation Sequencing (NGS) and AI for precise genetic analysis and personalized oncology treatments. Our Research Services drive innovation in oncology through NGS and AI, enhancing diagnostic tools and therapeutic strategies.",
@@ -86,7 +89,10 @@ def services_section() -> rx.Component:
         rx.mobile_and_tablet(
             rx.mobile_and_tablet(
             rx.vstack(
-                rx.heading("SERVICES", size="4", weight="bold", margin_bottom="1em", color="green"),
+                rx.box(
+                    rx.heading("SERVICES", size="5", weight="bold", margin_bottom="1em", color="green", align="center"),
+                    width="100%",
+                ),
                 rx.heading("Empowering healthcare with NGS and AI", size="6", weight="medium", color="black", margin_bottom="10px", align="center"),
                 rx.box(
                     rx.text(
