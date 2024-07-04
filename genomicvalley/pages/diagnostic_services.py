@@ -97,12 +97,12 @@ def diagnostic_services():
                 rx.box(
                     rx.vstack(
                         rx.text(
-                            "At Genomics Valley Bharat Limited, our diagnostic services harness the power of Next-Generation Sequencing (NGS) to deliver unparalleled precision in identifying genetic mutations and abnormalities. By integrating advanced AI technologies, we provide rapid and accurate molecular diagnostics, enabling early detection and personalized treatment plans for oncology patients. Our commitment to leveraging cutting-edge NGS ensures that healthcare providers have access to comprehensive and reliable data, empowering them to make informed decisions and improve patient outcomes.",
+                            "At Genomic Valley, our diagnostic services harness the power of Next-Generation Sequencing (NGS) to deliver unparalleled precision in identifying genetic mutations and abnormalities. By integrating advanced AI technologies, we provide rapid and accurate molecular diagnostics, enabling early detection and personalized treatment plans for oncology patients. Our commitment to leveraging cutting-edge NGS ensures that healthcare providers have access to comprehensive and reliable data, empowering them to make informed decisions and improve patient outcomes.",
                             style=mobile_paragraph_style,
                         ),
                         rx.heading("Personalized Healthcare", size="7", margin_top="2rem", margin_bottom="1rem", color="teal", font_weight="bold", id="personalized-healthcare"),
                         rx.text(
-                            "Personalized healthcare at Genomics Valley Bharat Limited is centered on tailoring medical treatment to individual patients based on their unique genetic profiles. Utilizing Next-Generation Sequencing (NGS) and advanced AI technologies, we provide precise diagnostics that enable healthcare providers to design customized treatment plans. This approach enhances the effectiveness of therapies, minimizes adverse effects, and ensures that each patient receives the most suitable care for their specific genetic makeup.",
+                            "Personalized healthcare at Genomic Valley is centered on tailoring medical treatment to individual patients based on their unique genetic profiles. Utilizing Next-Generation Sequencing (NGS) and advanced AI technologies, we provide precise diagnostics that enable healthcare providers to design customized treatment plans. This approach enhances the effectiveness of therapies, minimizes adverse effects, and ensures that each patient receives the most suitable care for their specific genetic makeup.",
                             style=mobile_paragraph_style,
                         ),
                         rx.heading("Genetic Disease Predisposition", size="7", margin_top="2rem", margin_bottom="1rem", color="teal", font_weight="bold", id="genetic-disease-predisposition"),
@@ -112,7 +112,7 @@ def diagnostic_services():
                         ),
                         rx.heading("Community Health Support", size="7", margin_top="2rem", margin_bottom="1rem", color="teal", font_weight="bold", id="community-health-support"),
                         rx.text(
-                            "Community health support at Genomics Valley Bharat Limited aims to improve public health outcomes through comprehensive genomic screening programs. By integrating NGS and AI, we offer population-wide genetic testing to identify prevalent health risks and tailor community health initiatives accordingly. This service supports public health agencies and organizations in designing effective health programs, improving disease prevention, and enhancing the overall well-being of the community.",
+                            "Community health support at Genomic Valley aims to improve public health outcomes through comprehensive genomic screening programs. By integrating NGS and AI, we offer population-wide genetic testing to identify prevalent health risks and tailor community health initiatives accordingly. This service supports public health agencies and organizations in designing effective health programs, improving disease prevention, and enhancing the overall well-being of the community.",
                             style=mobile_paragraph_style,
                         ),
                         rx.vstack(
