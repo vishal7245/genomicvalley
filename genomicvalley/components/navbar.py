@@ -54,9 +54,9 @@ def navbar() -> rx.Component:
         rx.desktop_only(
             rx.hstack(
                 rx.hstack(
-                    rx.link(rx.image(src="/nav-logo.png", alt="Genomic Valley"), href="/"),
+                    rx.link(rx.image(src="/logo1.png", alt="Genomic Valley", max_height="100px"), href="/"),
                     align_items="center",
-                    margin_left="2em",
+                    margin_left="1em",
                     margin_top="1em",
                     max_height="40px",
                     margin_bottom="1em",
