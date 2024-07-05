@@ -35,7 +35,7 @@ def mobile_news_card(heading: str, summary: str, read_more_url: str) -> rx.Compo
     return rx.card(
         rx.vstack(
             rx.heading(heading, size="3", color="black"),
-            rx.text(summary, color="gray"),
+            rx.text(summary, color="gray", style={"text_align": "justify"}),
             rx.button(
                 "Read More",
                 on_click=lambda: rx.redirect(read_more_url),
