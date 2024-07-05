@@ -17,7 +17,7 @@ def news_card(heading: str, summary: str, read_more_url: str) -> rx.Component:
             rx.text(summary, color="gray", style={"text_align": "justify"}),
             rx.button(
                 "Read More",
-                on_click=lambda: rx.redirect(read_more_url),
+                on_click=lambda: rx.redirect(read_more_url, external=True,),
                 color_scheme="green",
                 size="2",
                 align_self="flex-start",
@@ -38,7 +38,7 @@ def mobile_news_card(heading: str, summary: str, read_more_url: str) -> rx.Compo
             rx.text(summary, color="gray", style={"text_align": "justify"}),
             rx.button(
                 "Read More",
-                on_click=lambda: rx.redirect(read_more_url),
+                on_click=lambda: rx.redirect(read_more_url, external=True,),
                 color_scheme="green",
                 size="2",
                 align_self="flex-start",

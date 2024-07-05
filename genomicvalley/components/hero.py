@@ -51,7 +51,7 @@ def hero_section():
                                 1000,
                             ],
                             style={
-                                "color": "gray",
+                                "color": "#d5d2cb",
                                 "fontSize": "30px",
                             },
                         ),
