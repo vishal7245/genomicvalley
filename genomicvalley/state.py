@@ -1,5 +1,5 @@
 import reflex as rx
-
+import feedparser
 import sqlite3
 from datetime import datetime
 
@@ -34,4 +34,40 @@ class ContactDatabase:
 
     def close(self):
         self.conn.close()
+        
+
+class GetRss:
+    rss_urls = [
+        "https://health.economictimes.indiatimes.com/rss/diagnostics",
+        "https://health.economictimes.indiatimes.com/rss/medical-devices"
+    ]
+
+    @classmethod
+    def getnews(cls):
+        news = []
+        for url in cls.rss_urls:
+            entry = cls.parse_news(url)
+            news = cls.merge_lists(news, entry)
+        return news
+
+    @staticmethod
+    def parse_news(url):
+        data = feedparser.parse(url)
+        entries = data.get('entries', [])
+        return [
+            {
+                'title': entry.get('title', ''),
+                'link': entry.get('link', ''),
+                'summary': entry.get('summary', '')
+            }
+            for entry in entries
+        ]
+
+    @staticmethod
+    def merge_lists(list1, list2):
+        merged_list = []
+        for item1, item2 in zip(list1, list2):
+            merged_list.extend([item1, item2])
+        merged_list.extend(list1[len(list2):] + list2[len(list1):])
+        return merged_list
         
