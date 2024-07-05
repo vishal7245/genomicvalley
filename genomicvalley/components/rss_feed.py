@@ -39,7 +39,7 @@ def mobile_news_card(heading: str, summary: str, read_more_url: str) -> rx.Compo
             rx.button(
                 "Read More",
                 on_click=lambda: rx.redirect(read_more_url),
-                color_scheme="blue",
+                color_scheme="green",
                 size="2",
                 align_self="flex-start",
                 margin_top="1em",
