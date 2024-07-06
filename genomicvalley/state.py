@@ -2,6 +2,9 @@ import reflex as rx
 import feedparser
 import sqlite3
 from datetime import datetime
+import os, smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 
 class ContactDatabase:
     def __init__(self, db_name="contact_entries.db"):
@@ -31,7 +34,39 @@ class ContactDatabase:
         VALUES (?, ?, ?, ?, ?, ?)
         ''', (first_name, last_name, email, phone, message, timestamp))
         self.conn.commit()
+        
+        
+        # send mail
+        # sender_email = os.getenv("SENDER_EMAIL")
+        # receiver_email = os.getenv("RECEIVER_EMAIL")
+        # subject = "Genomic Valley Contact"
+        # body = f""" 
+        #         Title: Genomic Valley Contact
 
+        #         Message: {message}
+
+        #         Name: {first_name} {last_name}
+        #         Phone: {phone}
+        #         Email: {email}
+        #         timestamp: {timestamp}
+        #         """
+                
+        # smtp_server = "smtp.gmail.com"
+        # smtp_port = 587
+        # smtp_username = os.getenv("SENDER_EMAIL")
+        # smtp_password = os.getenv("SENDER_PASSWORD")
+        # message = MIMEMultipart()
+        # message["From"] = sender_email
+        # message["To"] = receiver_email
+        # message["Subject"] = subject
+        
+        # message.attach(MIMEText(body, "plain"))
+
+        # with smtplib.SMTP(smtp_server, smtp_port) as server:
+        #     server.starttls()
+        #     server.login(smtp_username, smtp_password)
+        #     server.sendmail(sender_email, receiver_email, message.as_string())
+             
     def close(self):
         self.conn.close()
         
@@ -49,6 +84,14 @@ class GetRss:
             entry = cls.parse_news(url)
             news = cls.merge_lists(news, entry)
         return news
+    
+    @classmethod
+    def get_titles(cls):
+        titles = []
+        for url in cls.rss_urls:
+            entries = cls.parse_news(url)
+            titles.extend(entry['title'] for entry in entries)
+        return titles
 
     @staticmethod
     def parse_news(url):

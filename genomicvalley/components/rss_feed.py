@@ -71,7 +71,7 @@ def news_section() -> rx.Component:
                                 ),
                                 type="always",
                                 scrollbars="vertical",
-                                style={'height': "620px", 'width': '100%', 'max_width': '60%'}  # Added max-width
+                                style={'height': "620px", 'width': '100%', 'max_width': '70%'}  # Added max-width
                             ),
                             width="100%",
                             align_items="center",

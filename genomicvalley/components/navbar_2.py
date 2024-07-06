@@ -64,6 +64,7 @@ def navbar_white() -> rx.Component:
                 rx.hstack(
                     navbar_link("Home", "/"),
                     navbar_link("About Us", "/about"),
+                    navbar_link("News", "/news"),
                     rx.menu.root(
                         rx.menu.trigger(
                             rx.button(
@@ -123,6 +124,7 @@ def navbar_white() -> rx.Component:
                     rx.menu.content(
                         rx.menu.item("Home", on_click=lambda: redirect("/")),
                         rx.menu.item("About Us", on_click=lambda: redirect("/about")),
+                        rx.menu.item("News", on_click=lambda: redirect("/news")),
                         rx.menu.sub(
                             rx.menu.sub_trigger("Services"),
                             rx.menu.sub_content(

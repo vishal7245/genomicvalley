@@ -1,4 +1,4 @@
-from .pages import (index, contact_page, about_us, diagnostic_services, research_services, page_not_found, investor_relation)
+from .pages import (index, contact_page, about_us, diagnostic_services, research_services, page_not_found, news_and_updates)
 
 __all__ = [
     "index",
@@ -7,5 +7,5 @@ __all__ = [
     "diagnostic_services",
     "research_services",
     "page_not_found",
-    "investor_relation"
+    "news_and_updates",
 ]

@@ -57,7 +57,7 @@ def form_field(
             rx.form.label(label, color="black"),
             rx.form.control(
                 rx.input(
-                    placeholder=placeholder, type=type, bg="rgba(39,162,85,0.2)",color="black",style={"& input::placeholder": {"color": "gray"}}
+                    placeholder=placeholder, type=type, bg="rgba(39,162,85,0.2)",color="black",style={"& input::placeholder": {"color": "gray"}}, required=True
                 ),
                 as_child=True,
             ),

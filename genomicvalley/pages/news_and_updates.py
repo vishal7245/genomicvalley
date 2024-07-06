@@ -4,16 +4,15 @@ import reflex as rx
 from genomicvalley.components.footer import footer
 from genomicvalley.components.navbar_2 import navbar_white as navbar
 from genomicvalley.components.banner import banner
-from genomicvalley.components.investor_content import investor_content
+from genomicvalley.components.rss_feed import news_section
 
 
-
-@rx.page()
-def investor_relation(route="/investor-relations", title="Investor Relations"):
+@rx.page(route="/news", title="News and Updates")
+def news_and_updates():
     return rx.vstack(
         navbar(),
-        banner("Investor Relations"),
-        investor_content(),
+        banner("News and Updates"),
+        news_section(),
         footer(),
     )
 

@@ -1,5 +1,44 @@
 import reflex as rx
 
+
+from reflex.vars import Var
+from typing import Any
+from reflex.utils import imports
+
+class Carousel(rx.Component):
+    """Carousel component."""
+    library = "react-responsive-carousel"
+    tag = "Carousel"
+    
+    dynamicHeight: bool = False  # Changed to False to maintain fixed height
+    showThumbs: bool = False
+    centerMode: bool = False
+    infiniteLoop: bool = True
+    autoPlay: bool = True
+    interval: int = 3000
+    swipeable: bool = True
+    emulateTouch: bool = True
+    showStatus: bool = False
+    showIndicators: bool = False
+    
+    # Fixed height
+    width: str = "100%"
+    height: str = "300px"  # Fixed height, adjust as needed
+
+    def _get_imports(self) -> imports.ImportDict:
+        return imports.merge_imports(
+            super()._get_imports(),
+            {
+                "": {
+                    imports.ImportVar(
+                        tag="react-responsive-carousel/lib/styles/carousel.min.css"
+                    )
+                }
+            },
+        )
+
+carousel = Carousel.create
+
 def image_gallery() -> rx.Component:
     return rx.section(
         rx.desktop_only(
@@ -90,4 +129,34 @@ def image_gallery() -> rx.Component:
                 width="100%",
             )
         ),
+        rx.mobile_and_tablet(
+            rx.vstack(
+                rx.box(
+                    rx.heading("GALLERY", size="5", weight="bold", margin_bottom="1em", color="green", align="center"),
+                    width="100%",
+                ),
+                rx.heading("A glimpse into our company", size="6", weight="medium", color="black", margin_bottom="10px", align="center"),
+                rx.box(
+                    carousel(
+                        *[rx.image(
+                            src=f"/c{i}.png", 
+                            width="100%", 
+                            height="300px",  # Match the carousel height
+                            object_fit="contain",  # Changed to 'contain' to fit the entire image
+                            background_color="black",  # Optional: adds a background color
+                        ) for i in range(1, 17)],
+                    ),
+                    width="100%",
+                    max_width="100vw",
+                    height="300px",  # Fixed height
+                    overflow="hidden",
+                    position="relative",
+                    padding="0.5em"
+                ),
+                justify_content="center",
+                align_items="center",
+                width="100%",
+                padding="0.5em",
+            )
+        )
     )

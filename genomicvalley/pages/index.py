@@ -10,18 +10,18 @@ from genomicvalley.components.testimonials import testimonials_section
 from genomicvalley.components.image_gallery import image_gallery
 from genomicvalley.components.about_section import about_section
 from genomicvalley.components.hero import hero_section
-from genomicvalley.components.rss_feed import news_section
+from genomicvalley.components.news_scroller import news_scroller
 
-@rx.page()
-def index(title="Genomic Valley"):
+
+@rx.page(title="Genomic Valley")
+def index():
     return rx.vstack(
         navbar(),
         hero_section(),
         about_section(),
-        image_gallery(),
         services_section(),
         faq_section(),
-        news_section(),
+        image_gallery(),
         contact_section(),
         footer(),
         spacing="0",

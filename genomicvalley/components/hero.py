@@ -1,4 +1,5 @@
 import reflex as rx
+from genomicvalley.components.news_scroller import news_scroller
 
 class TypeAnimation(rx.Component):
     """ReflexTypeAnimation component."""
@@ -30,6 +31,11 @@ hero_card_style = {
     "max_width": "600px",  # Limit the maximum width
     "width": "90%",  # Take up 90% of the container width, but not more than max-width
     "margin_left": "5%",  # Add some left margin
+}
+
+news_scroller_style = {
+    "backdrop_filter": "blur(60px)",
+    "background_color": "rgba(255, 255, 255, 0.1)"
 }
 
 def hero_section():
@@ -68,13 +74,22 @@ def hero_section():
                     height="100%",  # Take full height of the parent
                     width="100%",  # Take full width of the parent
                 ),
+                rx.box(
+                    news_scroller(),
+                    position="absolute",
+                    bottom="0",
+                    left="0",
+                    right="0",
+                    style=news_scroller_style,
+                ),
                 background_image="url('hero-bg.jpg')",
                 background_size="cover",
                 background_position="center",
                 width="100%",
                 height="100vh",  # Full viewport height
                 margin="0",
-                padding="0",  # Remove padding from the main box
+                padding="0", 
+                position="relative",
             )    
         ),
         rx.mobile_and_tablet(
@@ -115,6 +130,15 @@ def hero_section():
                     max_width="600px",  # Limit maximum width for larger screens
                     padding="1rem",  # Add some padding around the content
                 ),
+                rx.box(
+                    news_scroller(),
+                    position="absolute",
+                    bottom="0",
+                    left="0",
+                    right="0",
+                    style=news_scroller_style,
+                ),
+                position="relative",
                 background_image="url('hero-bg.jpg')",
                 background_size="cover",
                 background_position="center",

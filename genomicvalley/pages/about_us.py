@@ -154,6 +154,7 @@ def about_us():
                     p="4",
                     padding="2rem",
                 ),
+                image_gallery(),
                 team_section(),
                 footer(),
                 spacing="0",
