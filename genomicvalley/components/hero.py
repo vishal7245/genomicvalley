@@ -143,7 +143,7 @@ def hero_section():
                 background_size="cover",
                 background_position="center",
                 width="100%",
-                height="100vh",  # Full viewport height
+                height="95vh",  # Full viewport height
                 margin="0",
                 padding="0",  # Remove padding from the main box
                 display="flex",
