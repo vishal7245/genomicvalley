@@ -74,8 +74,8 @@ style_contact_form = {
 
 
 button_style = {
-    "background_color": "rgba(8, 132, 132, 0.2);",
-    "color": "black",
+    "background_color": "teal",
+    "color": "white",
     "border": "1px solid black",
 }
 
