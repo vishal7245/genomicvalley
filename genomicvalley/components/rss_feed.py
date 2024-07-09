@@ -61,7 +61,7 @@ def news_section() -> rx.Component:
                         rx.heading("NEWS AND UPDATES", size="5", weight="bold", margin_bottom="1em", color="green", align="center"),
                         width="100%",
                     ),
-                    rx.heading("Stay updated with latest healthcare news", size="8", weight="medium", color="black", margin_bottom="30px", align="center"),
+                    rx.heading("Stay updated with latest the healthcare news", size="8", weight="medium", color="black", margin_bottom="30px", align="center"),
                     rx.center(  # Added a center component
                         rx.vstack(
                             rx.scroll_area(
@@ -93,7 +93,7 @@ def news_section() -> rx.Component:
                     rx.heading("NEWS AND UPDATES", size="5", weight="bold", margin_bottom="1em", color="green", align="center"),
                     width="100%",
                 ),
-                rx.heading("Stay updated with latest healthcare news", size="6", weight="medium", color="black", margin_bottom="10px", align="center"),
+                rx.heading("Stay updated with latest the healthcare news", size="6", weight="medium", color="black", margin_bottom="10px", align="center"),
                 rx.vstack(
                     rx.vstack(
                             rx.scroll_area(
