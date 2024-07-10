@@ -1,50 +1,48 @@
 import os
 import smtplib
-import sqlite3
-from datetime import datetime
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-
 from dotenv import load_dotenv
+from datetime import datetime
 import feedparser
 import reflex as rx
+from genomicvalley.models import ContactForm
+import pytz
+
 
 load_dotenv()
 
 
+def getdatetime():
+    utc_now = datetime.now(pytz.utc)
+
+    # Convert to IST
+    ist_tz = pytz.timezone("Asia/Kolkata")
+    ist_now = utc_now.astimezone(ist_tz)
+
+    # Format the date and time
+    formatted_date = ist_now.strftime("%d/%m/%y")
+    formatted_time = ist_now.strftime("%I:%M:%S %p")
+
+    return f"{formatted_time} {formatted_date}"
+
+
 class ContactDatabase:
-    def __init__(self, db_name="contact_entries.db"):
-        self.conn = sqlite3.connect(db_name)
-        self.create_table()
+    def add_entry(self, first_name, last_name, email, phone, message):  # send mail
+        with rx.session() as session:
+            session.add(
+                ContactForm(
+                    first_name=first_name,
+                    last_name=last_name,
+                    phone=str(phone),
+                    email=email,
+                    message=message,
+                    timestamp=str(getdatetime()),
+                )
+            )
+        self.send_email(first_name, last_name, email, phone, message)
 
-    def create_table(self):
-        cursor = self.conn.cursor()
-        cursor.execute("""
-        CREATE TABLE IF NOT EXISTS contact_entries (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            first_name TEXT,
-            last_name TEXT,
-            email TEXT,
-            phone TEXT,
-            message TEXT,
-            timestamp DATETIME
-        )
-        """)
-        self.conn.commit()
-
-    def add_entry(self, first_name, last_name, email, phone, message):
-        cursor = self.conn.cursor()
-        timestamp = datetime.now().isoformat()
-        cursor.execute(
-            """
-        INSERT INTO contact_entries (first_name, last_name, email, phone, message, timestamp)
-        VALUES (?, ?, ?, ?, ?, ?)
-        """,
-            (first_name, last_name, email, phone, message, timestamp),
-        )
-        self.conn.commit()
-
-        # send mail
+    def send_email(self, first_name, last_name, email, phone, message):
         sender_email = os.getenv("SENDER_EMAIL")
         receiver_email = os.getenv("RECEIVER_EMAIL")
         subject = "Genomic Valley Contact"
@@ -56,7 +54,7 @@ class ContactDatabase:
                 Name: {first_name} {last_name}
                 Phone: {phone}
                 Email: {email}
-                timestamp: {timestamp}
+                Timestamp: {getdatetime()}
                 """
 
         smtp_server = "smtp.zoho.in"
@@ -74,9 +72,6 @@ class ContactDatabase:
             server.starttls()
             server.login(smtp_username, smtp_password)
             server.sendmail(sender_email, receiver_email, message.as_string())
-
-    def close(self):
-        self.conn.close()
 
 
 class GetRss:

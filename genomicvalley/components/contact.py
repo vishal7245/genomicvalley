@@ -1,6 +1,5 @@
-import reflex as rx # type: ignore
+import reflex as rx  # type: ignore
 from genomicvalley.state import ContactDatabase
-
 
 
 class FormState(rx.State):
@@ -25,9 +24,11 @@ class FormState(rx.State):
             form_data["phone"],
             form_data["message"],
         )
-        db.close()
-        self.set_alert_message("Thank you for your message! We'll get back to you soon.")
-                
+        self.set_alert_message(
+            "Thank you for your message! We'll get back to you soon."
+        )
+
+
 def alert_dialog():
     return rx.alert_dialog.root(
         rx.alert_dialog.content(
@@ -48,16 +49,18 @@ def alert_dialog():
     )
 
 
-
-def form_field(
-    label: str, placeholder: str, type: str, name: str
-) -> rx.Component:
+def form_field(label: str, placeholder: str, type: str, name: str) -> rx.Component:
     return rx.form.field(
         rx.flex(
             rx.form.label(label, color="black"),
             rx.form.control(
                 rx.input(
-                    placeholder=placeholder, type=type, bg="rgba(39,162,85,0.2)",color="black",style={"& input::placeholder": {"color": "gray"}}, required=True
+                    placeholder=placeholder,
+                    type=type,
+                    bg="rgba(39,162,85,0.2)",
+                    color="black",
+                    style={"& input::placeholder": {"color": "gray"}},
+                    required=True,
                 ),
                 as_child=True,
             ),
@@ -67,6 +70,7 @@ def form_field(
         name=name,
         width="100%",
     )
+
 
 style_contact_form = {
     "background_color": "rgba(128,212,148,0.2);",
@@ -86,7 +90,7 @@ def contact_form() -> rx.Component:
             rx.hstack(
                 rx.badge(
                     rx.icon(tag="mail-plus", size=32, color="black"),
-                    color_scheme= "green",
+                    color_scheme="green",
                     radius="full",
                     padding="0.65rem",
                 ),
@@ -139,9 +143,7 @@ def contact_form() -> rx.Component:
                             "email",
                             "email",
                         ),
-                        form_field(
-                            "Phone", "Phone", "tel", "phone"
-                        ),
+                        form_field("Phone", "Phone", "tel", "phone"),
                         spacing="3",
                         flex_direction=[
                             "column",
@@ -163,22 +165,22 @@ def contact_form() -> rx.Component:
                             placeholder="Message",
                             name="message",
                             resize="vertical",
-                            bg = "rgba(39,162,85,0.2)",
+                            bg="rgba(39,162,85,0.2)",
                             color="black",
-                            style={"& text_area::placeholder": {"color": "gray"}}
+                            style={"& text_area::placeholder": {"color": "gray"}},
                         ),
                         direction="column",
                         spacing="1",
                     ),
                     rx.form.submit(
-                        rx.button("Submit", style = button_style),
+                        rx.button("Submit", style=button_style),
                         as_child=True,
                     ),
                     direction="column",
                     spacing="2",
                     width="100%",
                 ),
-                on_submit= FormState.handle_form_submit,
+                on_submit=FormState.handle_form_submit,
                 reset_on_submit=True,
             ),
             width="100%",
@@ -190,15 +192,26 @@ def contact_form() -> rx.Component:
         max_width="400px",
     )
 
-    
-    
+
 def contact_section() -> rx.Component:
     return rx.section(
         rx.desktop_only(
             rx.section(
                 rx.vstack(
-                    rx.heading("CONTACT", size="5", weight="bold", margin_bottom="1em", color="green"),
-                    rx.heading("Get in touch with us", size="8", weight="medium", color="black", margin_bottom="10px"),
+                    rx.heading(
+                        "CONTACT",
+                        size="5",
+                        weight="bold",
+                        margin_bottom="1em",
+                        color="green",
+                    ),
+                    rx.heading(
+                        "Get in touch with us",
+                        size="8",
+                        weight="medium",
+                        color="black",
+                        margin_bottom="10px",
+                    ),
                     rx.hstack(
                         rx.box(
                             rx.html(
@@ -228,8 +241,20 @@ def contact_section() -> rx.Component:
         rx.mobile_and_tablet(
             rx.section(
                 rx.vstack(
-                    rx.heading("CONTACT", size="4", weight="bold", margin_bottom="1em", color="green"),
-                    rx.heading("Get in touch with us", size="6", weight="medium", color="black", margin_bottom="10px"),
+                    rx.heading(
+                        "CONTACT",
+                        size="4",
+                        weight="bold",
+                        margin_bottom="1em",
+                        color="green",
+                    ),
+                    rx.heading(
+                        "Get in touch with us",
+                        size="6",
+                        weight="medium",
+                        color="black",
+                        margin_bottom="10px",
+                    ),
                     rx.box(
                         rx.html(
                             """
