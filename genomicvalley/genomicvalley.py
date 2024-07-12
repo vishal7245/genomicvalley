@@ -1,4 +1,5 @@
-import reflex as rx # type: ignore
+import reflex as rx  # type: ignore
+
 
 style = {
     "font_family": "Arial, sans-serif",

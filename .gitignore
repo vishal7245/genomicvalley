@@ -1,6 +1,7 @@
 *.db
 *.py[cod]
+.env
 .web
 __pycache__/
-.env
+alembic.ini
 alembic/
