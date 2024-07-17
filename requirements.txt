@@ -1,4 +1,4 @@
-reflex==0.5.5
+reflex==0.5.7
 reflex-type-animation==0.0.1
 feedparser==6.0.11
 python-dotenv==1.0.1

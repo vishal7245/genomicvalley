@@ -25,7 +25,7 @@ def login_form() -> rx.Component:
         rx.vstack(
             rx.center(
                 rx.heading(
-                    "Sign in to your account",
+                    "Admin Login",
                     size="6",
                     as_="h2",
                     text_align="center",

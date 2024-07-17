@@ -6,12 +6,14 @@ from email.mime.text import MIMEText
 from dotenv import load_dotenv
 import feedparser
 import reflex as rx
-from genomicvalley.models import ContactForm
+from genomicvalley.models import ContactForm, VisitorModel
 import pytz
 import datetime
 from sqlmodel import Column, DateTime, Field, func
 from sqlmodel import select
 from .models import LocalUser
+from typing import List
+import requests
 
 LOGIN_ROUTE = "/admin"
 
@@ -19,7 +21,7 @@ LOGIN_ROUTE = "/admin"
 load_dotenv()
 
 
-def getdatetime():
+def getcurrentdate():
     utc_now = datetime.datetime.now(pytz.utc)
 
     # Convert to IST
@@ -28,13 +30,90 @@ def getdatetime():
 
     # Format the date and time
     formatted_date = ist_now.strftime("%d/%m/%y")
-    formatted_time = ist_now.strftime("%I:%M:%S %p")
 
-    return f"{formatted_time} {formatted_date}"
+    return f"{formatted_date}"
 
 
-class ContactDatabase:
-    def add_entry(self, first_name, last_name, email, phone, message):  # send mail
+def getcurrentmonth():
+    current_date = datetime.datetime.now()
+    current_month = current_date.month
+    return current_month
+
+
+def getcurrentyear():
+    current_date = datetime.datetime.now()
+    current_year = current_date.year
+    return current_year
+
+
+class VisitorStats(rx.State):
+    visitor_entries: List[VisitorModel] = []
+    total_visitors: int
+    unique_visitors: int
+    monthly_visitors: int
+    unique_monthly_visitors: int
+    daily_visitors: int
+    unique_daily_visitors: int
+
+    def log_visitor(self):
+        client_ip = self.router.session.client_ip
+        url = f"http://ip-api.com/json/{client_ip}"
+        response = requests.get(url)
+        data = response.json()
+        if data["status"] == "success":
+            with rx.session() as session:
+                session.add(
+                    VisitorModel(
+                        ip_address=client_ip,
+                        lat=data["lat"],
+                        long=data["lon"],
+                        country=data["country"],
+                        city=data["city"],
+                        date=str(getcurrentdate()),
+                        month=getcurrentmonth(),
+                        year=getcurrentyear(),
+                    )
+                )
+                session.commit()
+
+    def get_visitor_entries(self):
+        with rx.session() as session:
+            visitor_entries = session.exec(select(VisitorModel)).all()
+            self.visitor_entries = visitor_entries
+            self.total_visitors = len(visitor_entries)
+            self.unique_visitors = len(
+                set(entry.ip_address for entry in visitor_entries)
+            )
+            current_date = getcurrentdate()
+            current_month = getcurrentmonth()
+            current_year = getcurrentyear()
+
+            # Calculate monthly visitors
+            monthly_entries = [
+                entry
+                for entry in visitor_entries
+                if entry.month == current_month and entry.year == current_year
+            ]
+            self.monthly_visitors = len(monthly_entries)
+            self.unique_monthly_visitors = len(
+                set(entry.ip_address for entry in monthly_entries)
+            )
+
+            # Calculate daily visitors
+            daily_entries = [
+                entry for entry in visitor_entries if entry.date == str(current_date)
+            ]
+            self.daily_visitors = len(daily_entries)
+            self.unique_daily_visitors = len(
+                set(entry.ip_address for entry in daily_entries)
+            )
+
+
+class ContactDatabase(rx.State):
+    entries: List[ContactForm] = []
+
+    @classmethod
+    def add_entry(cls, first_name, last_name, email, phone, message):  # send mail
         with rx.session() as session:
             session.add(
                 ContactForm(
@@ -43,13 +122,22 @@ class ContactDatabase:
                     phone=str(phone),
                     email=email,
                     message=message,
-                    timestamp=str(getdatetime()),
+                    date=str(getcurrentdate()),
+                    seen=False,
+                    month=getcurrentmonth(),
+                    year=getcurrentyear(),
                 )
             )
             session.commit()
-        self.send_email(first_name, last_name, email, phone, message)
+        cls.send_email(first_name, last_name, email, phone, message)
 
-    def send_email(self, first_name, last_name, email, phone, message):
+    def get_entries(self):
+        with rx.session() as session:
+            entries = session.exec(select(ContactForm)).all()
+            self.entries = entries
+
+    @classmethod
+    def send_email(cls, first_name, last_name, email, phone, message):
         sender_email = os.getenv("SENDER_EMAIL")
         receiver_email = os.getenv("RECEIVER_EMAIL")
         subject = "Genomic Valley Contact"
@@ -61,7 +149,7 @@ class ContactDatabase:
                 Name: {first_name} {last_name}
                 Phone: {phone}
                 Email: {email}
-                Timestamp: {getdatetime()}
+                Date: {getcurrentdate()}
                 """
 
         smtp_server = "smtp.zoho.in"
@@ -154,7 +242,7 @@ class LocalAuthState(rx.State):
     # The auth_token is stored in local storage to persist across tab and browser sessions.
     auth_token: str = rx.LocalStorage(name=AUTH_TOKEN_LOCAL_STORAGE_KEY)
 
-    @rx.cached_var
+    @rx.var(cache=True)
     def authenticated_user(self) -> LocalUser:
         """The currently authenticated user, or a dummy user if not authenticated.
 
@@ -176,7 +264,7 @@ class LocalAuthState(rx.State):
                 return user
         return LocalUser(id=-1)  # type: ignore
 
-    @rx.cached_var
+    @rx.var(cache=True)
     def is_authenticated(self) -> bool:
         """Whether the current user is authenticated.
 
@@ -330,7 +418,6 @@ def require_login(page: rx.app.ComponentCallable) -> rx.app.ComponentCallable:
     Returns:
         The wrapped page component.
     """
-    print("Decorator Called")
 
     def protected_page():
         return rx.fragment(

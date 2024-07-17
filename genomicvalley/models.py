@@ -10,7 +10,21 @@ class ContactForm(rx.Model, table=True):
     phone: str
     email: str
     message: str
-    timestamp: str
+    date: str
+    seen: bool
+    month: int
+    year: int
+
+
+class VisitorModel(rx.Model, table=True):
+    ip_address: str
+    lat: float
+    long: float
+    country: str
+    city: str
+    date: str
+    month: int
+    year: int
 
 
 class LocalUser(

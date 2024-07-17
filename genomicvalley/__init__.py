@@ -9,6 +9,7 @@ from .pages import (
     admin_login,
     dashboard,
     logout,
+    contact_dashboard,
 )
 
 __all__ = [
@@ -22,4 +23,5 @@ __all__ = [
     "admin_login",
     "dashboard",
     "logout",
+    "contact_dashboard",
 ]

@@ -1,8 +1,10 @@
 import reflex as rx
 from genomicvalley.components.news_scroller import news_scroller
 
+
 class TypeAnimation(rx.Component):
     """ReflexTypeAnimation component."""
+
     tag = "TypeAnimation"
     library = "react-type-animation"
     sequence: rx.Var[list]
@@ -13,7 +15,8 @@ class TypeAnimation(rx.Component):
     pre_render_first_string: rx.Var[bool] = False
     deletion_speed: rx.Var[int] = 40
     omit_deletion_animation: rx.Var[bool] = False
-    style: dict = {'fontSize': '2em', 'color': "black"}
+    style: dict = {"fontSize": "2em", "color": "black"}
+
 
 type_animation = TypeAnimation.create
 
@@ -35,25 +38,26 @@ hero_card_style = {
 
 news_scroller_style = {
     "backdrop_filter": "blur(60px)",
-    "background_color": "rgba(255, 255, 255, 0.1)"
+    "background_color": "rgba(255, 255, 255, 0.1)",
 }
+
 
 def hero_section():
     return rx.section(
         rx.desktop_only(
-                    rx.box(
+            rx.box(
                 rx.vstack(
                     rx.vstack(
                         rx.heading("Genomic Valley", color="white", style=heading_font),
                         type_animation(
                             sequence=[
-                                'Where Health Meets Technology.',
+                                "Where Health Meets Technology.",
                                 1000,
-                                'Where Health Meets Breakthroughs.',
+                                "Where Health Meets Breakthroughs.",
                                 1000,
-                                'Where Health Meets Precision.',
+                                "Where Health Meets Precision.",
                                 1000,
-                                'Where Health Meets Innovation.',
+                                "Where Health Meets Innovation.",
                                 1000,
                             ],
                             style={
@@ -62,8 +66,23 @@ def hero_section():
                             },
                         ),
                         rx.hstack(
-                            rx.button("Brochure", size="3", on_click=rx.download(url="/Genomic Valley-Brochure.pdf")),
-                            rx.link(rx.button("Contact Us", size="3", variant="outline"), href="/contact"),
+                            rx.button(
+                                "Brochure",
+                                size="3",
+                                color_scheme="teal",
+                                on_click=rx.download(
+                                    url="/Genomic Valley-Brochure.pdf",
+                                ),
+                            ),
+                            rx.link(
+                                rx.button(
+                                    "Contact Us",
+                                    size="3",
+                                    variant="solid",
+                                    color_scheme="teal",
+                                ),
+                                href="/contact",
+                            ),
                             spacing="4",  # Add spacing between buttons
                         ),
                         spacing="4",
@@ -88,24 +107,31 @@ def hero_section():
                 width="100%",
                 height="100vh",  # Full viewport height
                 margin="0",
-                padding="0", 
+                padding="0",
                 position="relative",
-            )    
+            )
         ),
         rx.mobile_and_tablet(
-                        rx.box(
+            rx.box(
                 rx.vstack(
                     rx.vstack(
-                        rx.heading("Genomic Valley", color="white", style= {"fontSize": "30px", "lineHeight": "clamp(1.2, 4vw, 2em)"}),
+                        rx.heading(
+                            "Genomic Valley",
+                            color="white",
+                            style={
+                                "fontSize": "30px",
+                                "lineHeight": "clamp(1.2, 4vw, 2em)",
+                            },
+                        ),
                         type_animation(
                             sequence=[
-                                'Where Health Meets Technology.',
+                                "Where Health Meets Technology.",
                                 1000,
-                                'Where Health Meets Breakthroughs.',
+                                "Where Health Meets Breakthroughs.",
                                 1000,
-                                'Where Health Meets Precision.',
+                                "Where Health Meets Precision.",
                                 1000,
-                                'Where Health Meets Innovation.',
+                                "Where Health Meets Innovation.",
                                 1000,
                             ],
                             style={
@@ -115,8 +141,17 @@ def hero_section():
                             },
                         ),
                         rx.hstack(  # Changed from hstack to vstack for better mobile layout
-                            rx.button("Brochure", size="3", on_click=rx.download(url="/Genomic Valley-Brochure.pdf")),
-                            rx.link(rx.button("Contact Us", size="3", variant="outline"), href="/contact"),
+                            rx.button(
+                                "Brochure",
+                                size="3",
+                                on_click=rx.download(
+                                    url="/Genomic Valley-Brochure.pdf"
+                                ),
+                            ),
+                            rx.link(
+                                rx.button("Contact Us", size="3", variant="outline"),
+                                href="/contact",
+                            ),
                             spacing="4",  # Add spacing between buttons
                         ),
                         spacing="4",

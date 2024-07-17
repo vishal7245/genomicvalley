@@ -16,8 +16,7 @@ class FormState(rx.State):
 
     def handle_form_submit(self, form_data: dict):
         self.form_data = form_data
-        db = ContactDatabase()
-        db.add_entry(
+        ContactDatabase.add_entry(
             form_data["first_name"],
             form_data["last_name"],
             form_data["email"],

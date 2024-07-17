@@ -11,6 +11,6 @@ from genomicvalley.state import LocalAuthState
 def logout():
     return rx.vstack(
         navbar(),
-        banner("Logout"),
+        banner("Logged Out"),
         footer(),
     )

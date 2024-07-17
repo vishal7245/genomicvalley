@@ -5,11 +5,13 @@ from reflex.vars import Var
 from typing import Any
 from reflex.utils import imports
 
+
 class Carousel(rx.Component):
     """Carousel component."""
+
     library = "react-responsive-carousel"
     tag = "Carousel"
-    
+
     dynamicHeight: bool = False  # Changed to False to maintain fixed height
     showThumbs: bool = False
     centerMode: bool = False
@@ -20,7 +22,7 @@ class Carousel(rx.Component):
     emulateTouch: bool = True
     showStatus: bool = False
     showIndicators: bool = False
-    
+
     # Fixed height
     width: str = "100%"
     height: str = "300px"  # Fixed height, adjust as needed
@@ -37,21 +39,35 @@ class Carousel(rx.Component):
             },
         )
 
+
 carousel = Carousel.create
+
 
 def image_gallery() -> rx.Component:
     return rx.section(
         rx.desktop_only(
             rx.section(
                 rx.vstack(
-                    rx.heading("GALLERY", size="5", weight="bold", margin_bottom="1em", color="green"),
-                    rx.heading("A glimpse into our company", size="8", weight="medium", color="black", margin_bottom="10px"),
+                    rx.heading(
+                        "GALLERY",
+                        size="5",
+                        weight="bold",
+                        margin_bottom="1em",
+                        color="green",
+                    ),
+                    rx.heading(
+                        "A glimpse into our company",
+                        size="8",
+                        weight="medium",
+                        color="black",
+                        margin_bottom="10px",
+                    ),
                     rx.html(
                         """
                         <style>
                             .carousel {
                                 position: relative;
-                                width: 100vw;
+                                width: 100%;
                                 overflow: hidden;
                             }
 
@@ -132,31 +148,48 @@ def image_gallery() -> rx.Component:
         rx.mobile_and_tablet(
             rx.vstack(
                 rx.box(
-                    rx.heading("GALLERY", size="5", weight="bold", margin_bottom="1em", color="green", align="center"),
+                    rx.heading(
+                        "GALLERY",
+                        size="5",
+                        weight="bold",
+                        margin_bottom="1em",
+                        color="green",
+                        align="center",
+                    ),
                     width="100%",
                 ),
-                rx.heading("A glimpse into our company", size="6", weight="medium", color="black", margin_bottom="10px", align="center"),
+                rx.heading(
+                    "A glimpse into our company",
+                    size="6",
+                    weight="medium",
+                    color="black",
+                    margin_bottom="10px",
+                    align="center",
+                ),
                 rx.box(
                     carousel(
-                        *[rx.image(
-                            src=f"/c{i}.png", 
-                            width="100%", 
-                            height="300px",  # Match the carousel height
-                            object_fit="contain",  # Changed to 'contain' to fit the entire image
-                            background_color="black",  # Optional: adds a background color
-                        ) for i in range(1, 17)],
+                        *[
+                            rx.image(
+                                src=f"/c{i}.png",
+                                width="100%",
+                                height="300px",  # Match the carousel height
+                                object_fit="contain",  # Changed to 'contain' to fit the entire image
+                                background_color="black",  # Optional: adds a background color
+                            )
+                            for i in range(1, 17)
+                        ],
                     ),
                     width="100%",
                     max_width="100vw",
                     height="300px",  # Fixed height
                     overflow="hidden",
                     position="relative",
-                    padding="0.5em"
+                    padding="0.5em",
                 ),
                 justify_content="center",
                 align_items="center",
                 width="100%",
                 padding="0.5em",
             )
-        )
+        ),
     )
