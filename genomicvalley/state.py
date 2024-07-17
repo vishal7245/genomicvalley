@@ -55,8 +55,20 @@ class VisitorStats(rx.State):
     daily_visitors: int
     unique_daily_visitors: int
 
-    def log_visitor(self):
-        client_ip = self.router.session.client_ip
+    def get_client_ip(self):
+        x_real_ip = self.request.headers.get("X-Real-IP")
+        x_forwarded_for = self.request.headers.get("X-Forwarded-For")
+
+        if x_real_ip:
+            return x_real_ip
+        elif x_forwarded_for:
+            # X-Forwarded-For can contain multiple IPs; the client's IP is the first one
+            return x_forwarded_for.split(",")[0].strip()
+        else:
+            return self.router.session.client_ip
+
+    async def log_visitor(self):
+        client_ip = self.get_client_ip()
         print(client_ip)
         url = f"http://ip-api.com/json/{client_ip}"
         response = requests.get(url)
