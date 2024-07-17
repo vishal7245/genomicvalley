@@ -13,9 +13,7 @@ from sqlmodel import Column, DateTime, Field, func
 from sqlmodel import select
 from .models import LocalUser
 from typing import List
-import requests
-from fastapi import Request
-
+import json
 
 LOGIN_ROUTE = "/admin"
 
@@ -70,21 +68,8 @@ class VisitorStats(rx.State):
             return self.router.session.client_ip
 
     async def log_visitor(self):
-        x_forwarded_for = self.router.headers.get("x-forwarded-for")
-        x_real_ip = self.router.headers.get("x-real-ip")
-        remote_addr = self.router.headers.get("remote-addr")
-
-        # Determine the client IP
-        if x_forwarded_for:
-            client_ip = x_forwarded_for.split(",")[0].strip()
-        elif x_real_ip:
-            client_ip = x_real_ip
-        elif remote_addr:
-            client_ip = remote_addr
-        else:
-            client_ip = self.router.session.client_ip
-
-        print(f"Client IP: {client_ip}")
+        headers = self.router.header
+        print(json.dumps(headers, indent=4))
         # url = f"http://ip-api.com/json/{client_ip}"
         # response = requests.get(url)
         # data = response.json()
