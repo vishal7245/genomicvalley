@@ -71,7 +71,6 @@ class VisitorStats(rx.State):
         url = f"http://ip-api.com/json/{client_ip}"
         response = requests.get(url)
         data = response.json()
-        print(data)
         if data["status"] == "success":
             with rx.session() as session:
                 session.add(
