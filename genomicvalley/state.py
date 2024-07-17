@@ -57,9 +57,11 @@ class VisitorStats(rx.State):
 
     def log_visitor(self):
         client_ip = self.router.session.client_ip
+        print(client_ip)
         url = f"http://ip-api.com/json/{client_ip}"
         response = requests.get(url)
         data = response.json()
+        print(data)
         if data["status"] == "success":
             with rx.session() as session:
                 session.add(
