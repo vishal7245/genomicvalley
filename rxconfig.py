@@ -5,10 +5,9 @@ config = rx.Config(
     db_url="sqlite:///reflex.db",
     frontend_port=3000,
     backend_port=8000,
+    cors_allowed_origins=["*"],
 )
 
-# Enable the use of X-Forwarded-For header
-config.api.use_xforwarded_for = True
 
 # Create your app instance with this config
 app = rx.App(config=config)
