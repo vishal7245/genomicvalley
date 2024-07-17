@@ -13,7 +13,8 @@ from sqlmodel import Column, DateTime, Field, func
 from sqlmodel import select
 from .models import LocalUser
 from typing import List
-import json
+import requests
+
 
 LOGIN_ROUTE = "/admin"
 
@@ -69,7 +70,11 @@ class VisitorStats(rx.State):
 
     async def log_visitor(self):
         headers = self.router.header
-        print(json.dumps(headers, indent=4))
+        real_ip = getattr(headers, "x_real_ip", None)
+        forwarded_for = getattr(headers, "x_forwarded_for", None)
+
+        print(f"Real IP: {real_ip}")
+        print(f"Forwarded For: {forwarded_for}")
         # url = f"http://ip-api.com/json/{client_ip}"
         # response = requests.get(url)
         # data = response.json()
