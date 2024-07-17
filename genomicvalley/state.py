@@ -71,33 +71,26 @@ class VisitorStats(rx.State):
 
     async def log_visitor(self):
         headers = self.router.headers
-        x_forwarded_for = headers.get("X-Forwarded-For")
-        if x_forwarded_for:
-            client_ip = x_forwarded_for.split(",")[0].strip()
-        else:
-            x_real_ip = headers.get("X-Real-IP")
-            if x_real_ip:
-                client_ip = x_real_ip
-        print(client_ip)
-        url = f"http://ip-api.com/json/{client_ip}"
-        response = requests.get(url)
-        data = response.json()
-        print(data)
-        if data["status"] == "success":
-            with rx.session() as session:
-                session.add(
-                    VisitorModel(
-                        ip_address=client_ip,
-                        lat=data["lat"],
-                        long=data["lon"],
-                        country=data["country"],
-                        city=data["city"],
-                        date=str(getcurrentdate()),
-                        month=getcurrentmonth(),
-                        year=getcurrentyear(),
-                    )
-                )
-                session.commit()
+        print(headers)
+        # url = f"http://ip-api.com/json/{client_ip}"
+        # response = requests.get(url)
+        # data = response.json()
+        # print(data)
+        # if data["status"] == "success":
+        #     with rx.session() as session:
+        #         session.add(
+        #             VisitorModel(
+        #                 ip_address=client_ip,
+        #                 lat=data["lat"],
+        #                 long=data["lon"],
+        #                 country=data["country"],
+        #                 city=data["city"],
+        #                 date=str(getcurrentdate()),
+        #                 month=getcurrentmonth(),
+        #                 year=getcurrentyear(),
+        #             )
+        #         )
+        #         session.commit()
 
     def get_visitor_entries(self):
         with rx.session() as session:
