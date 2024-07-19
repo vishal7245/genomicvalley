@@ -144,12 +144,18 @@ def hero_section():
                             rx.button(
                                 "Brochure",
                                 size="3",
+                                color_scheme="teal",
                                 on_click=rx.download(
                                     url="/Genomic Valley-Brochure.pdf"
                                 ),
                             ),
                             rx.link(
-                                rx.button("Contact Us", size="3", variant="outline"),
+                                rx.button(
+                                    "Contact Us",
+                                    size="3",
+                                    variant="solid",
+                                    color_scheme="teal",
+                                ),
                                 href="/contact",
                             ),
                             spacing="4",  # Add spacing between buttons

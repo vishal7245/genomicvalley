@@ -12,7 +12,7 @@ import datetime
 from sqlmodel import Column, DateTime, Field, func
 from sqlmodel import select
 from .models import LocalUser
-from typing import List
+from typing import List, Dict, Any
 import requests
 
 
@@ -20,6 +20,11 @@ LOGIN_ROUTE = "/admin"
 
 
 load_dotenv()
+
+
+class CityStats(rx.Model):
+    city: str
+    count: int
 
 
 def getcurrentdate():
@@ -55,6 +60,7 @@ class VisitorStats(rx.State):
     unique_monthly_visitors: int
     daily_visitors: int
     unique_daily_visitors: int
+    city_wise: List[CityStats] = []
 
     async def log_visitor(self):
         headers = self.router.headers
@@ -118,6 +124,24 @@ class VisitorStats(rx.State):
             self.unique_daily_visitors = len(
                 set(entry.ip_address for entry in daily_entries)
             )
+
+            # Get top 5 cities with most visitors
+            city_counts = {}
+            for entry in visitor_entries:
+                city = entry.city
+                if city in city_counts:
+                    city_counts[city] += 1
+                else:
+                    city_counts[city] = 1
+
+            sorted_cities = sorted(
+                city_counts.items(), key=lambda x: x[1], reverse=True
+            )
+
+            city_wise = [
+                CityStats(city=city, count=count) for city, count in sorted_cities[:6]
+            ]
+            self.city_wise = city_wise
 
 
 class ContactDatabase(rx.State):
