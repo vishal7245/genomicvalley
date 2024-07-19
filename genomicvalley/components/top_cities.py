@@ -45,7 +45,7 @@ def top_cities() -> rx.Component:
                 rx.grid(
                     rx.foreach(VisitorStats.city_wise, stats),
                     columns="6",
-                    spacing="1",
+                    spacing="4",
                     padding_left="1em",
                     padding_right="1em",
                     width="100%",
