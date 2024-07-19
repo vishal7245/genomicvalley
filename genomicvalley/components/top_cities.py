@@ -29,6 +29,8 @@ def stats(city_obj: CityStats) -> rx.Component:
         size="3",
         width="100%",
         max_width="21rem",
+        padding_left="1em",
+        padding_right="1em",
     )
 
 
