@@ -10,6 +10,8 @@ from .pages import (
     dashboard,
     logout,
     contact_dashboard,
+    career_page,
+    create_announcement_page,
 )
 
 __all__ = [
@@ -24,4 +26,6 @@ __all__ = [
     "dashboard",
     "logout",
     "contact_dashboard",
+    "career_page",
+    "create_announcement_page",
 ]

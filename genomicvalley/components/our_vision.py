@@ -11,7 +11,7 @@ quote_style = {
 }
 
 
-def about_section() -> rx.Component:
+def vision_section() -> rx.Component:
     return rx.section(
         rx.desktop_only(
             rx.section(
@@ -39,19 +39,28 @@ def about_section() -> rx.Component:
                         text_align="center",
                     ),
                     rx.hstack(
-                        rx.text(
-                            "Welcome to Genomic Valley, where innovation meets expertise to revolutionize healthcare. With a dedicated team boasting over 10 years of experience in Next-Generation Sequencing (NGS), oncology, and Artificial Intelligence (AI), we are at the forefront of integrating advanced technologies into biotechnology and healthcare solutions. Our team comprises highly skilled professionals passionate about utilizing their extensive knowledge to drive forward the fields of oncology research and diagnostics. We are committed to implementing both novel and validated methods, ensuring the delivery of accurate and confident results in our pursuit of better healthcare outcomes.",
-                            color="black",
-                            padding="1em",
-                            size="5",
-                            text_align="justify",
-                        ),
                         rx.image(
-                            src="/about-img.jpg",
+                            src="/c4.png",
                             alt="Genomic Valley",
-                            width="50vw",
+                            width="40vw",
                             margin_top="2em",
                             padding="1em",
+                        ),
+                        rx.vstack(
+                            rx.text(
+                                "At Genomic Valley, our vision is to propel molecular diagnostics into a new era of precision and efficiency through the integration of novel AI-based approaches. We are dedicated to advancing modern healthcare by offering more accurate diagnostics, backed by comprehensive metadata, delivered in significantly less time. Our goal is to provide personalized therapy options, empowering doctors with robust support for decision-making and enabling the identification of effective treatment options. By harnessing the power of AI and IT, we aim to transform oncology research and diagnostics, ensuring that patients receive the most precise and timely care possible.",
+                                color="black",
+                                padding="1em",
+                                size="5",
+                                text_align="justify",
+                            ),
+                            rx.text(
+                                "We envision a future where cutting-edge technology and human expertise converge to revolutionize the landscape of molecular diagnostics. Our commitment to innovation and excellence drives us to continuously explore and implement advanced methods, ultimately improving patient outcomes and contributing to the advancement of global healthcare. We are committed to providing comprehensive Research Process Outsourcing (RPO) services tailored to global researchers. With a dedicated team of experts and access to professional software tools, we ensure refined data analysis and deliver optimal solutions. Our services aim to empower researchers worldwide by enhancing their projects with advanced analytical capabilities and meticulous attention to detail.",
+                                color="black",
+                                padding="1em",
+                                size="5",
+                                text_align="justify",
+                            ),
                         ),
                         margin_top="2em",
                         align_items="center",

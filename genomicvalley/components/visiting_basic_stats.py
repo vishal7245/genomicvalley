@@ -47,8 +47,8 @@ def visiting_basic_stats() -> rx.Component:
     return rx.section(
         rx.grid(
             stats(stat_name="Total Visitors", value=VisitorStats.total_visitors),
-            stats(stat_name="Unique Visitos", value=VisitorStats.unique_visitors),
-            stats(stat_name="Monthly Visitos", value=VisitorStats.monthly_visitors),
+            stats(stat_name="Unique Visitors", value=VisitorStats.unique_visitors),
+            stats(stat_name="Monthly Visitors", value=VisitorStats.monthly_visitors),
             stats(
                 stat_name="Monthly Unique Visitors",
                 value=VisitorStats.unique_monthly_visitors,

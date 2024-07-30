@@ -4,6 +4,15 @@ import reflex as rx
 from sqlmodel import Field
 
 
+class AnnouncementModel(rx.Model, table=True):
+    title: str
+    body: str
+    date: str
+    author: str
+    month: int
+    year: int
+
+
 class ContactForm(rx.Model, table=True):
     first_name: str
     last_name: str
