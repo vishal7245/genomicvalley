@@ -1,4 +1,4 @@
-import reflex as rx # type: ignore
+import reflex as rx  # type: ignore
 
 
 font_style = {
@@ -7,9 +7,8 @@ font_style = {
 
 
 def navbar_link(text: str, url: str) -> rx.Component:
-    return rx.link(
-        rx.text(text, size="4", weight="medium", style=font_style), href=url
-    )
+    return rx.link(rx.text(text, size="4", weight="medium", style=font_style), href=url)
+
 
 def blur_background():
     return rx.fragment(
@@ -45,6 +44,7 @@ def blur_background():
         ),
     )
 
+
 def redirect(url):
     return rx.redirect(url)
 
@@ -54,7 +54,12 @@ def navbar() -> rx.Component:
         rx.desktop_only(
             rx.hstack(
                 rx.hstack(
-                    rx.link(rx.image(src="/logo2.png", alt="Genomic Valley", max_height="100px"), href="/"),
+                    rx.link(
+                        rx.image(
+                            src="/logo2.png", alt="Genomic Valley", max_height="100px"
+                        ),
+                        href="/",
+                    ),
                     align_items="center",
                     margin_left="1em",
                     margin_top="1em",
@@ -65,6 +70,7 @@ def navbar() -> rx.Component:
                     navbar_link("Home", "/"),
                     navbar_link("About Us", "/about"),
                     navbar_link("News", "/news"),
+                    navbar_link("Careers", "/career"),
                     rx.menu.root(
                         rx.menu.trigger(
                             rx.button(
@@ -72,40 +78,42 @@ def navbar() -> rx.Component:
                                     "Services",
                                     size="4",
                                     weight="medium",
-                                    style = font_style,
+                                    style=font_style,
                                 ),
                                 rx.icon("chevron-down"),
                                 weight="medium",
                                 variant="ghost",
                                 size="3",
-                                color = "green",
-                                _hover = {
-                                    "background": "#93f599"
-                                },
+                                color="green",
+                                _hover={"background": "#93f599"},
                             ),
                         ),
                         rx.menu.content(
-                            rx.menu.item("Diagnostic Services", on_click=lambda: redirect("/diagnostic-services")),
-                            rx.menu.item("Research Services", on_click=lambda: redirect("/research-services")),
-                        )
+                            rx.menu.item(
+                                "Diagnostic Services",
+                                on_click=lambda: redirect("/diagnostic-services"),
+                            ),
+                            rx.menu.item(
+                                "Research Services",
+                                on_click=lambda: redirect("/research-services"),
+                            ),
+                        ),
                     ),
                     rx.link(
                         rx.button(
-                                rx.text(
-                                    "Contact",
-                                    size="4",
-                                    weight="medium",
-                                    style = font_style,
-                                ),
-                                weight="medium",
-                                variant="ghost",
+                            rx.text(
+                                "Contact",
                                 size="4",
-                                _hover = {
-                                    "background": "#93f599"
-                                },
+                                weight="medium",
+                                style=font_style,
                             ),
-                        href="/contact"
+                            weight="medium",
+                            variant="ghost",
+                            size="4",
+                            _hover={"background": "#93f599"},
                         ),
+                        href="/contact",
+                    ),
                     justify="end",
                     spacing="5",
                     margin_right="2em",
@@ -118,18 +126,23 @@ def navbar() -> rx.Component:
         rx.mobile_and_tablet(
             rx.hstack(
                 rx.menu.root(
-                    rx.menu.trigger(
-                        rx.icon("menu", size=30, color="black")
-                    ),
+                    rx.menu.trigger(rx.icon("menu", size=30, color="black")),
                     rx.menu.content(
                         rx.menu.item("Home", on_click=lambda: redirect("/")),
                         rx.menu.item("About Us", on_click=lambda: redirect("/about")),
                         rx.menu.item("News", on_click=lambda: redirect("/news")),
+                        rx.menu.item("Careers", on_click=lambda: redirect("/career")),
                         rx.menu.sub(
                             rx.menu.sub_trigger("Services"),
                             rx.menu.sub_content(
-                                rx.menu.item("Diagnostic Services", on_click=lambda: redirect("/diagnostic-services")),
-                                rx.menu.item("Research Services", on_click=lambda: redirect("/research-services")),
+                                rx.menu.item(
+                                    "Diagnostic Services",
+                                    on_click=lambda: redirect("/diagnostic-services"),
+                                ),
+                                rx.menu.item(
+                                    "Research Services",
+                                    on_click=lambda: redirect("/research-services"),
+                                ),
                             ),
                         ),
                         rx.menu.item("Contact", on_click=lambda: redirect("/contact")),
