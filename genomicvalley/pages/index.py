@@ -13,6 +13,7 @@ from genomicvalley.state import VisitorStats
 from genomicvalley.components.our_vision import vision_section
 from genomicvalley.components.career_form import career_form
 from genomicvalley.components.create_announcement import create_announcement
+from genomicvalley.components.testimonials import testimonials_section
 
 
 @rx.page(title="Genomic Valley", on_load=VisitorStats.log_visitor)
@@ -24,6 +25,7 @@ def index():
         services_section(),
         vision_section(),
         faq_section(),
+        testimonials_section(),
         image_gallery(),
         contact_section(),
         footer(),
