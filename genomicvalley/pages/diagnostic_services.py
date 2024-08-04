@@ -86,7 +86,6 @@ def diagnostic_services():
                                     "Community health support at Genomic Valley aims to improve public health outcomes through comprehensive genomic screening programs. By integrating NGS and AI, we offer population-wide genetic testing to identify prevalent health risks and tailor community health initiatives accordingly. This service supports public health agencies and organizations in designing effective health programs, improving disease prevention, and enhancing the overall well-being of the community.",
                                     style=paragraph_style,
                                 ),
-                                rx.image(src="/services.jpeg"),
                             ),
                             width="60vw",
                             p="4",
@@ -123,7 +122,6 @@ def diagnostic_services():
                             "At Genomic Valley, our diagnostic services harness the power of Next-Generation Sequencing (NGS) to deliver unparalleled precision in identifying genetic mutations and abnormalities. By integrating advanced AI technologies, we provide rapid and accurate molecular diagnostics, enabling early detection and personalized treatment plans for oncology patients. Our commitment to leveraging cutting-edge NGS ensures that healthcare providers have access to comprehensive and reliable data, empowering them to make informed decisions and improve patient outcomes.",
                             style=mobile_paragraph_style,
                         ),
-                        rx.image(src="/services.jpeg"),
                         rx.heading(
                             "Personalized Healthcare",
                             size="7",

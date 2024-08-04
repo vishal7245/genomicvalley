@@ -6,28 +6,6 @@ class CareerFormState(rx.State):
     form_data: dict = {}
     resume: str
 
-    def handle_form_submit(self, form_data: dict):
-        self.form_data = form_data
-
-        print(form_data)
-
-    async def handle_upload(self, files: list[rx.UploadFile]):
-        """Handle the upload of file(s).
-        Args:
-            files: The uploaded files.
-        """
-        for file in files:
-            upload_data = await file.read()
-            outfile = rx.get_upload_dir() / file.filename
-
-            # Save the file.
-            with outfile.open("wb") as file_object:
-                file_object.write(upload_data)
-
-            self.resume = file.filename
-
-
-class CBoxeState(rx.State):
     wet_lab_choices: dict[str, bool] = {
         k: False
         for k in [
@@ -140,6 +118,26 @@ class CBoxeState(rx.State):
         choices = [l for l, v in self.sales_and_marketing_choices.items() if v]
         return choices
 
+    def handle_form_submit(self, form_data: dict):
+        self.form_data = form_data
+        self.form_data["resume"] = self.resume
+        print(form_data)
+
+    async def handle_upload(self, files: list[rx.UploadFile]):
+        """Handle the upload of file(s).
+        Args:
+            files: The uploaded files.
+        """
+        for file in files:
+            upload_data = await file.read()
+            outfile = rx.get_upload_dir() / file.filename
+
+            # Save the file.
+            with outfile.open("wb") as file_object:
+                file_object.write(upload_data)
+
+            self.resume = file.filename
+
 
 def render_checkboxes(values, handler):
     return rx.grid(
@@ -248,7 +246,8 @@ def upload_form():
                 on_click=rx.clear_selected_files("upload1"),
             ),
         ),
-        padding="5em",
+        padding="1em",
+        width="100%",
     )
 
 
@@ -256,9 +255,16 @@ def career_form() -> rx.Component:
     return rx.section(
         rx.card(
             rx.vstack(
+                rx.heading(
+                    "Section A: Upload Resume",
+                    size="5",
+                    color="black",
+                    margin_bottom="20px",
+                ),
+                upload_form(),
                 rx.form.root(
                     rx.heading(
-                        "Section A: Personal Information", size="5", color="black"
+                        "Section B: Personal Information", size="5", color="black"
                     ),
                     rx.hstack(
                         form_field(
@@ -329,7 +335,7 @@ def career_form() -> rx.Component:
                         ),
                     ),
                     rx.heading(
-                        "Section B: Position Details",
+                        "Section C: Position Details",
                         size="5",
                         color="black",
                         margin_top="20px",
@@ -360,7 +366,7 @@ def career_form() -> rx.Component:
                         color="black",
                     ),
                     rx.heading(
-                        "Section C: Education ",
+                        "Section D: Education ",
                         size="5",
                         color="black",
                         margin_top="20px",
@@ -410,7 +416,7 @@ def career_form() -> rx.Component:
                         ),
                     ),
                     rx.heading(
-                        "Section D: Employment History ",
+                        "Section E: Employment History ",
                         size="5",
                         color="black",
                         margin_top="20px",
@@ -453,7 +459,7 @@ def career_form() -> rx.Component:
                         name="responsibilities_and_achievements",
                     ),
                     rx.heading(
-                        "Section E: Skills",
+                        "Section F: Skills",
                         size="5",
                         color="black",
                         margin_top="20px",
@@ -464,8 +470,8 @@ def career_form() -> rx.Component:
                     ),
                     rx.scroll_area(
                         render_checkboxes(
-                            CBoxeState.wet_lab_choices,
-                            CBoxeState.check_wet_lab_choice,
+                            CareerFormState.wet_lab_choices,
+                            CareerFormState.check_wet_lab_choice,
                         ),
                         type="always",
                         scrollbars="vertical",
@@ -480,8 +486,8 @@ def career_form() -> rx.Component:
                     ),
                     rx.scroll_area(
                         render_checkboxes(
-                            CBoxeState.dry_lab_choices,
-                            CBoxeState.check_dry_lab_choice,
+                            CareerFormState.dry_lab_choices,
+                            CareerFormState.check_dry_lab_choice,
                         ),
                         type="always",
                         scrollbars="vertical",
@@ -495,11 +501,11 @@ def career_form() -> rx.Component:
                         margin_top="30px",
                     ),
                     render_checkboxes(
-                        CBoxeState.sales_and_marketing_choices,
-                        CBoxeState.sales_and_marketing_choice,
+                        CareerFormState.sales_and_marketing_choices,
+                        CareerFormState.sales_and_marketing_choice,
                     ),
                     rx.heading(
-                        "Section F: Additional Information",
+                        "Section G: Additional Information",
                         size="5",
                         color="black",
                         margin_top="20px",
@@ -536,13 +542,6 @@ def career_form() -> rx.Component:
                         color="black",
                     ),
                     rx.heading(
-                        "Section G: Upload Resume",
-                        size="5",
-                        color="black",
-                        margin_top="20px",
-                    ),
-                    upload_form(),
-                    rx.heading(
                         "Section H: Declaration",
                         size="5",
                         color="black",
@@ -560,7 +559,7 @@ def career_form() -> rx.Component:
                         as_child=True,
                     ),
                     on_submit=CareerFormState.handle_form_submit,
-                )
+                ),
             ),
             width="70%",
         ),

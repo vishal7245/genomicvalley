@@ -85,7 +85,6 @@ def research_services():
                                     "Our extramural research projects involve collaborating with external academic institutions, research organizations, and industry partners to advance genomic science. These projects leverage our expertise in NGS and AI to explore new frontiers in genetics and healthcare. Through these collaborations, we aim to accelerate the translation of scientific discoveries into practical applications that can benefit patients and the broader healthcare community.",
                                     style=paragraph_style,
                                 ),
-                                rx.image(src="/services.jpeg"),
                             ),
                             width="60vw",
                             p="4",
@@ -122,7 +121,6 @@ def research_services():
                             "Our research services at Genomic Valley focus on pioneering advancements in oncology through the application of Next-Generation Sequencing (NGS) and artificial intelligence. With over a decade of experience, our team is dedicated to exploring new frontiers in cancer research, utilizing NGS to uncover novel biomarkers and genetic insights. We collaborate with leading academic and industry partners to translate these discoveries into practical solutions, driving innovation and enhancing the understanding of cancer biology. Our goal is to contribute to the development of more effective diagnostic tools and therapeutic strategies, ultimately advancing the field of oncology research.",
                             style=mobile_paragraph_style,
                         ),
-                        rx.image(src="/services.jpeg"),
                         rx.heading(
                             "AI-Based Genome Healthcare",
                             size="8",

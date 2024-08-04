@@ -31,9 +31,10 @@ hero_card_style = {
     "border_radius": "1em",
     "backdrop_filter": "blur(60px)",
     "background_color": "rgba(255, 255, 255, 0.1)",  # Added for better visibility
-    "max_width": "600px",  # Limit the maximum width
+    "max_width": "950px",  # Limit the maximum width
     "width": "90%",  # Take up 90% of the container width, but not more than max-width
-    "margin_left": "5%",  # Add some left margin
+    "margin_left": "3%",  # Add some left margin
+    "margin_top": "20%",
 }
 
 news_scroller_style = {
@@ -57,7 +58,7 @@ def hero_section():
                                 1000,
                                 "Where Health Meets Precision.",
                                 1000,
-                                "Where Health Meets Innovation.",
+                                "A dynamic startup reshaping healthcare with advanced solutions.",
                                 1000,
                             ],
                             style={

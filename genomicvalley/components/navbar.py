@@ -49,6 +49,9 @@ def redirect(url):
     return rx.redirect(url)
 
 
+hover_style = {"background": "#f0f0f0"}
+
+
 def navbar() -> rx.Component:
     return rx.box(
         rx.desktop_only(
@@ -71,8 +74,8 @@ def navbar() -> rx.Component:
                     navbar_link("About Us", "/about"),
                     navbar_link("News", "/news"),
                     navbar_link("Careers", "/career"),
-                    rx.menu.root(
-                        rx.menu.trigger(
+                    rx.hover_card.root(
+                        rx.hover_card.trigger(
                             rx.button(
                                 rx.text(
                                     "Services",
@@ -88,17 +91,256 @@ def navbar() -> rx.Component:
                                 _hover={"background": "#93f599"},
                             ),
                         ),
-                        rx.menu.content(
-                            rx.menu.item(
-                                "Diagnostic Services",
-                                on_click=lambda: redirect("/diagnostic-services"),
+                        rx.hover_card.content(
+                            rx.vstack(
+                                rx.vstack(
+                                    rx.link(
+                                        rx.text("Diagnostics Services", weight="bold"),
+                                        href="/diagnostic-services",
+                                    ),
+                                    rx.grid(
+                                        rx.vstack(
+                                            rx.text(
+                                                "Human Oncology and Inherited Disease Testing",
+                                                weight="medium",
+                                            ),
+                                            rx.link(
+                                                "DNA-Based Mutations (CNV, SNV, InDel) - Germline and Somatic",
+                                                href="#",
+                                                _hover=hover_style,
+                                            ),
+                                            rx.link(
+                                                "RNA Fusion",
+                                                href="#",
+                                                _hover=hover_style,
+                                            ),
+                                            align_items="start",
+                                            spacing="1",
+                                        ),
+                                        rx.vstack(
+                                            rx.text(
+                                                "Infectious Disease", weight="medium"
+                                            ),
+                                            rx.link(
+                                                "Pathogen Genomics",
+                                                href="#",
+                                                _hover=hover_style,
+                                            ),
+                                            rx.link(
+                                                "Antibiotic Resistance (AMR) Studies",
+                                                href="#",
+                                                _hover=hover_style,
+                                            ),
+                                            rx.link(
+                                                "Viral Genomics",
+                                                href="#",
+                                                _hover=hover_style,
+                                            ),
+                                            align_items="start",
+                                            spacing="1",
+                                        ),
+                                        rx.vstack(
+                                            rx.text(
+                                                "Genetic Disorders", weight="medium"
+                                            ),
+                                            rx.link(
+                                                "Rare Disease Genomics",
+                                                href="#",
+                                                _hover=hover_style,
+                                            ),
+                                            rx.link(
+                                                "Mendelian Disorders Testing",
+                                                href="#",
+                                                _hover=hover_style,
+                                            ),
+                                            rx.link(
+                                                "Genetic Testing and Screening",
+                                                href="#",
+                                                _hover=hover_style,
+                                            ),
+                                            align_items="start",
+                                            spacing="1",
+                                        ),
+                                        columns="3",
+                                        spacing="4",
+                                    ),
+                                    align_items="start",
+                                    width="100%",
+                                ),
+                                rx.vstack(
+                                    rx.link(
+                                        rx.text("Research Services", weight="bold"),
+                                        href="/research-services",
+                                    ),
+                                    rx.grid(
+                                        rx.vstack(
+                                            rx.text("Cancer Research", weight="medium"),
+                                            rx.link(
+                                                "Pan-cancer Studies",
+                                                href="#",
+                                                _hover=hover_style,
+                                            ),
+                                            rx.link(
+                                                "Hereditary Cancer Syndromes Testing",
+                                                href="#",
+                                                _hover=hover_style,
+                                            ),
+                                            rx.link(
+                                                "Tumor Microenvironment Studies",
+                                                href="#",
+                                                _hover=hover_style,
+                                            ),
+                                            rx.link(
+                                                "Tumor Profiling",
+                                                href="#",
+                                                _hover=hover_style,
+                                            ),
+                                            rx.link(
+                                                "Liquid Biopsy",
+                                                href="#",
+                                                _hover=hover_style,
+                                            ),
+                                            rx.link(
+                                                "Mutation Detection",
+                                                href="#",
+                                                _hover=hover_style,
+                                            ),
+                                            rx.link(
+                                                "Biomarker Discovery",
+                                                href="#",
+                                                _hover=hover_style,
+                                            ),
+                                            rx.link(
+                                                "Pharmacogenomics Testing",
+                                                href="#",
+                                                _hover=hover_style,
+                                            ),
+                                            align_items="start",
+                                            spacing="1",
+                                        ),
+                                        rx.vstack(
+                                            rx.text("NGS Services", weight="medium"),
+                                            rx.link(
+                                                "Library Preparation",
+                                                href="#",
+                                                _hover=hover_style,
+                                            ),
+                                            rx.link(
+                                                "Sequencing Platforms",
+                                                href="#",
+                                                _hover=hover_style,
+                                            ),
+                                            rx.link(
+                                                "Bioinformatics Analysis",
+                                                href="#",
+                                                _hover=hover_style,
+                                            ),
+                                            rx.link(
+                                                "Data Interpretation",
+                                                href="#",
+                                                _hover=hover_style,
+                                            ),
+                                            align_items="start",
+                                            spacing="1",
+                                        ),
+                                        rx.vstack(
+                                            rx.text(
+                                                "Key Area of NGS Services",
+                                                weight="medium",
+                                            ),
+                                            rx.link(
+                                                "Whole Genome Sequencing (WGS)",
+                                                href="#",
+                                                _hover=hover_style,
+                                            ),
+                                            rx.link(
+                                                "Whole Exome Sequencing (WES)",
+                                                href="#",
+                                                _hover=hover_style,
+                                            ),
+                                            rx.link(
+                                                "Targeted Sequencing",
+                                                href="#",
+                                                _hover=hover_style,
+                                            ),
+                                            rx.link(
+                                                "RNA Sequencing (RNA-Seq)",
+                                                href="#",
+                                                _hover=hover_style,
+                                            ),
+                                            rx.link(
+                                                "Single-cell Sequencing",
+                                                href="#",
+                                                _hover=hover_style,
+                                            ),
+                                            rx.link(
+                                                "Metagenomics Testing",
+                                                href="#",
+                                                _hover=hover_style,
+                                            ),
+                                            align_items="start",
+                                            spacing="1",
+                                        ),
+                                        columns="3",
+                                        spacing="4",
+                                    ),
+                                    align_items="start",
+                                    width="100%",
+                                ),
+                                spacing="4",
+                                align_items="start",
+                                width="100%",
                             ),
-                            rx.menu.item(
-                                "Research Services",
-                                on_click=lambda: redirect("/research-services"),
-                            ),
+                            width="800px",
+                            max_width="90vw",
                         ),
                     ),
+                    # rx.menu.root(
+                    #     rx.menu.trigger(
+                    #         rx.button(
+                    #             rx.text(
+                    #                 "Services",
+                    #                 size="4",
+                    #                 weight="medium",
+                    #                 style=font_style,
+                    #             ),
+                    #             rx.icon("chevron-down"),
+                    #             weight="medium",
+                    #             variant="ghost",
+                    #             size="3",
+                    #             color="green",
+                    #             _hover={"background": "#93f599"},
+                    #         ),
+                    #     ),
+                    #     rx.menu.content(
+                    #         rx.menu.sub(
+                    #             rx.menu.sub_trigger("Diagnostic Services"),
+                    #             rx.menu.sub_content(
+                    #                 rx.menu.item("Human Oncology"),
+                    #                 rx.menu.item("Infectious Disease"),
+                    #                 rx.menu.item("Genetic Disorders"),
+                    #             ),
+                    #         ),
+                    #         rx.menu.sub(
+                    #             rx.menu.sub_trigger("Research Services"),
+                    #             rx.menu.sub_content(
+                    #                 rx.menu.item("Cancer Research"),
+                    #                 rx.menu.item("NGS Services"),
+                    #                 rx.menu.item("Key Area of NGS"),
+                    #             ),
+                    #         ),
+                    #     ),
+                    #     rx.menu.content(
+                    #         rx.menu.item(
+                    #             "Diagnostic Services",
+                    #             on_click=lambda: redirect("/diagnostic-services"),
+                    #         ),
+                    #         rx.menu.item(
+                    #             "Research Services",
+                    #             on_click=lambda: redirect("/research-services"),
+                    #         ),
+                    #     ),
+                    # ),
                     rx.link(
                         rx.button(
                             rx.text(
