@@ -23,7 +23,6 @@ def index():
         hero_section(),
         about_section(),
         services_section(),
-        vision_section(),
         faq_section(),
         testimonials_section(),
         image_gallery(),
