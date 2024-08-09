@@ -25,7 +25,7 @@ def about_section() -> rx.Component:
                     ),
                     rx.hstack(
                         rx.text(
-                            "Welcome to Genomic Valley, where innovation meets expertise to revolutionize healthcare. With a dedicated team boasting over 10 years of experience in Next-Generation Sequencing (NGS), oncology, and Artificial Intelligence (AI), we are at the forefront of integrating advanced technologies into biotechnology and healthcare solutions. Our team comprises highly skilled professionals passionate about utilizing their extensive knowledge to drive forward the fields of oncology research and diagnostics. We are committed to implementing both novel and validated methods, ensuring the delivery of accurate and confident results in our pursuit of better healthcare outcomes.",
+                            "Welcome to Genomic Valley Bharat Pvt. Ltd., where innovation meets expertise to revolutionize healthcare. With a dedicated team boasting over 10 years of experience in Next-Generation Sequencing (NGS), oncology, and Artificial Intelligence (AI), we are at the forefront of integrating advanced technologies into biotechnology and healthcare solutions. Our team comprises highly skilled professionals passionate about utilizing their extensive knowledge to drive forward the fields of oncology research and diagnostics. We are committed to implementing both novel and validated methods, ensuring the delivery of accurate and confident results in our pursuit of better healthcare outcomes.",
                             color="black",
                             padding="1em",
                             size="5",
@@ -33,7 +33,7 @@ def about_section() -> rx.Component:
                         ),
                         rx.image(
                             src="/about-img.jpg",
-                            alt="Genomic Valley",
+                            alt="Genomic Valley Bharat Pvt. Ltd.",
                             width="50vw",
                             margin_top="2em",
                             padding="1em",
@@ -65,13 +65,13 @@ def about_section() -> rx.Component:
                 ),
                 rx.image(
                     src="/about-img.jpg",
-                    alt="Genomic Valley",
+                    alt="Genomic Valley Bharat Pvt. Ltd.",
                     width="100%",
                     margin_top="1em",
                     padding="0.5em",
                 ),
                 rx.text(
-                    "Welcome to Genomic Valley, where innovation meets expertise to revolutionize healthcare. With a dedicated team boasting over 10 years of experience in Next-Generation Sequencing (NGS), oncology, and Artificial Intelligence (AI), we are at the forefront of integrating advanced technologies into biotechnology and healthcare solutions. Our team comprises highly skilled professionals passionate about utilizing their extensive knowledge to drive forward the fields of oncology research and diagnostics. We are committed to implementing both novel and validated methods, ensuring the delivery of accurate and confident results in our pursuit of better healthcare outcomes.",
+                    "Welcome to Genomic Valley Bharat Pvt. Ltd., where innovation meets expertise to revolutionize healthcare. With a dedicated team boasting over 10 years of experience in Next-Generation Sequencing (NGS), oncology, and Artificial Intelligence (AI), we are at the forefront of integrating advanced technologies into biotechnology and healthcare solutions. Our team comprises highly skilled professionals passionate about utilizing their extensive knowledge to drive forward the fields of oncology research and diagnostics. We are committed to implementing both novel and validated methods, ensuring the delivery of accurate and confident results in our pursuit of better healthcare outcomes.",
                     color="black",
                     padding="1em",
                     size="4",

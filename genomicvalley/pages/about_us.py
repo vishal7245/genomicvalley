@@ -64,7 +64,7 @@ def about_us():
                     rx.box(
                         rx.vstack(
                             rx.text(
-                                "Welcome to Genomic Valley, where innovation meets expertise to revolutionize healthcare. With a dedicated team boasting over 10 years of experience in Next-Generation Sequencing (NGS), oncology, and Artificial Intelligence (AI), we are at the forefront of integrating advanced technologies into biotechnology and healthcare solutions. Our team comprises highly skilled professionals passionate about utilizing their extensive knowledge to drive forward the fields of oncology research and diagnostics. We are committed to implementing both novel and validated methods, ensuring the delivery of accurate and confident results in our pursuit of better healthcare outcomes.",
+                                "Welcome to Genomic Valley Bharat Pvt. Ltd., where innovation meets expertise to revolutionize healthcare. With a dedicated team boasting over 10 years of experience in Next-Generation Sequencing (NGS), oncology, and Artificial Intelligence (AI), we are at the forefront of integrating advanced technologies into biotechnology and healthcare solutions. Our team comprises highly skilled professionals passionate about utilizing their extensive knowledge to drive forward the fields of oncology research and diagnostics. We are committed to implementing both novel and validated methods, ensuring the delivery of accurate and confident results in our pursuit of better healthcare outcomes.",
                                 style=first_paragraph_style,
                                 id="first-paragraph",
                             ),
@@ -74,7 +74,7 @@ def about_us():
                             ),
                             rx.heading("Our Vision", size="9", margin_top="2rem", margin_bottom="1rem", color="teal", font_weight="bold", id="our-vision"),
                             rx.text(
-                                "At Genomic Valley, our vision is to propel molecular diagnostics into a new era of precision and efficiency through the integration of novel AI-based approaches. We are dedicated to advancing modern healthcare by offering more accurate diagnostics, backed by comprehensive metadata, delivered in significantly less time. Our goal is to provide personalized therapy options, empowering doctors with robust support for decision-making and enabling the identification of effective treatment options. By harnessing the power of AI and IT, we aim to transform oncology research and diagnostics, ensuring that patients receive the most precise and timely care possible.",
+                                "At Genomic Valley Bharat Pvt. Ltd., our vision is to propel molecular diagnostics into a new era of precision and efficiency through the integration of novel AI-based approaches. We are dedicated to advancing modern healthcare by offering more accurate diagnostics, backed by comprehensive metadata, delivered in significantly less time. Our goal is to provide personalized therapy options, empowering doctors with robust support for decision-making and enabling the identification of effective treatment options. By harnessing the power of AI and IT, we aim to transform oncology research and diagnostics, ensuring that patients receive the most precise and timely care possible.",
                                 style=paragraph_style,
                             ),
                             rx.text(
@@ -120,7 +120,7 @@ def about_us():
                 rx.box(
                     rx.vstack(
                         rx.text(
-                            "Welcome to Genomic Valley, where innovation meets expertise to revolutionize healthcare. With a dedicated team boasting over 10 years of experience in Next-Generation Sequencing (NGS), oncology, and Artificial Intelligence (AI), we are at the forefront of integrating advanced technologies into biotechnology and healthcare solutions.",
+                            "Welcome to Genomic Valley Bharat Pvt. Ltd., where innovation meets expertise to revolutionize healthcare. With a dedicated team boasting over 10 years of experience in Next-Generation Sequencing (NGS), oncology, and Artificial Intelligence (AI), we are at the forefront of integrating advanced technologies into biotechnology and healthcare solutions.",
                             style=mobile_paragraph_style,
                             id="first-paragraph-mobile",
                         ),
@@ -130,7 +130,7 @@ def about_us():
                         ),
                         rx.heading("Our Vision", size="7", margin_top="2rem", margin_bottom="1rem", color="teal", font_weight="bold", id="our-vision-mobile"),
                         rx.text(
-                            "At Genomic Valley, our vision is to propel molecular diagnostics into a new era of precision and efficiency through the integration of novel AI-based approaches. We are dedicated to advancing modern healthcare by offering more accurate diagnostics, backed by comprehensive metadata, delivered in significantly less time.",
+                            "At Genomic Valley Bharat Pvt. Ltd., our vision is to propel molecular diagnostics into a new era of precision and efficiency through the integration of novel AI-based approaches. We are dedicated to advancing modern healthcare by offering more accurate diagnostics, backed by comprehensive metadata, delivered in significantly less time.",
                             style=mobile_paragraph_style,
                         ),
                         rx.text(
