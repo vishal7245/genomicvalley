@@ -326,19 +326,25 @@ def navbar_white() -> rx.Component:
                     rx.menu.content(
                         rx.menu.item("Home", on_click=lambda: redirect("/")),
                         rx.menu.item("About Us", on_click=lambda: redirect("/about")),
+                        rx.menu.item("Collaborations", on_click=lambda: redirect("/collaborations")),
                         rx.menu.item("News", on_click=lambda: redirect("/news")),
                         rx.menu.item("Careers", on_click=lambda: redirect("/career")),
                         rx.menu.sub(
                             rx.menu.sub_trigger("Services"),
                             rx.menu.sub_content(
-                                rx.menu.item(
-                                    "Diagnostic Services",
-                                    on_click=lambda: redirect("/diagnostic-services"),
-                                ),
-                                rx.menu.item(
-                                    "Research Services",
-                                    on_click=lambda: redirect("/research-services"),
-                                ),
+                                rx.menu.item("Diagnostics Services", on_click=lambda: redirect("/diagnostic-services")),
+                                rx.menu.item("Research Services", on_click=lambda: redirect("/research-services")),
+                                rx.menu.item("Human Oncology Testing"),
+                                rx.menu.item("Infectious Disease Testing"),
+                                rx.menu.item("Genetic Disorders Testing"),
+                                rx.menu.item("Cancer Research"),
+                                rx.menu.item("NGS Services"),
+                                rx.menu.item("WGS"),
+                                rx.menu.item("WES"),
+                                rx.menu.item("Targeted Sequencing"),
+                                rx.menu.item("RNA Sequencing (RNA-Seq)"),
+                                rx.menu.item("Single-cell Sequencing"),
+                                rx.menu.item("Metagenomics Testing"),
                             ),
                         ),
                         rx.menu.item("Contact", on_click=lambda: redirect("/contact")),
