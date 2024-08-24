@@ -52,7 +52,7 @@ def about_us():
                 rx.html("""
                         <style>
                         #first-paragraph::first-letter {
-                            font-size: 100px; /* Increase the size */
+                            font-size: 120px; /* Increase the size */
                             font-weight: bold; /* Make it bold */
                             float: left; /* Align it to the left */
                             margin-right: 5px; /* Add some space between the letter and the rest of the text */
