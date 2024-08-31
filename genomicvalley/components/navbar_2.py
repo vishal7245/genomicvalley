@@ -100,62 +100,74 @@ def navbar_white() -> rx.Component:
                                     ),
                                     rx.grid(
                                         rx.vstack(
-                                            rx.text(
-                                                "Human Oncology and Inherited Disease Testing",
-                                                weight="medium",
+                                            rx.link(
+                                                rx.text(
+                                                    "Human Oncology and Inherited Disease Testing",
+                                                    weight="medium",
+                                                ),
+                                                href="/human-oncology-inherited-disease-testing",
+                                                _hover=hover_style,  
                                             ),
                                             rx.link(
                                                 "DNA-Based Mutations (CNV, SNV, InDel) - Germline and Somatic",
-                                                href="#",
+                                                href="/dna-based-mutations",
                                                 _hover=hover_style,
                                             ),
                                             rx.link(
                                                 "RNA Fusion",
-                                                href="#",
+                                                href="/rna-fusion",
                                                 _hover=hover_style,
                                             ),
                                             align_items="start",
                                             spacing="1",
                                         ),
                                         rx.vstack(
-                                            rx.text(
-                                                "Infectious Disease", weight="medium"
+                                            rx.link(
+                                                rx.text(
+                                                    "Infectious Disease", weight="medium"
+                                                ),
+                                                href="/infectious-disease",
+                                                _hover=hover_style,     
                                             ),
                                             rx.link(
                                                 "Pathogen Genomics",
-                                                href="#",
+                                                href="/pathogen-genomics",
                                                 _hover=hover_style,
                                             ),
                                             rx.link(
                                                 "Antibiotic Resistance (AMR) Studies",
-                                                href="#",
+                                                href="/amr-studies",
                                                 _hover=hover_style,
                                             ),
                                             rx.link(
                                                 "Viral Genomics",
-                                                href="#",
+                                                href="/viral-genomics",
                                                 _hover=hover_style,
                                             ),
                                             align_items="start",
                                             spacing="1",
                                         ),
                                         rx.vstack(
-                                            rx.text(
-                                                "Genetic Disorders", weight="medium"
+                                            rx.link(
+                                                rx.text(
+                                                    "Genetic Disorders", weight="medium"
+                                                ),
+                                                href="/genetic-disorders",
+                                                _hover=hover_style,     
                                             ),
                                             rx.link(
                                                 "Rare Disease Genomics",
-                                                href="#",
+                                                href="/rare-disease-genomics",
                                                 _hover=hover_style,
                                             ),
                                             rx.link(
                                                 "Mendelian Disorders Testing",
-                                                href="#",
+                                                href="/mendelian-disorders-testing",
                                                 _hover=hover_style,
                                             ),
                                             rx.link(
                                                 "Genetic Testing and Screening",
-                                                href="#",
+                                                href="/genetic-testing-and-screening",
                                                 _hover=hover_style,
                                             ),
                                             align_items="start",
@@ -174,108 +186,120 @@ def navbar_white() -> rx.Component:
                                     ),
                                     rx.grid(
                                         rx.vstack(
-                                            rx.text("Cancer Research", weight="medium"),
+                                            rx.link(
+                                                rx.text("Cancer Research", weight="medium"),
+                                                href="/cancer-research",
+                                                _hover=hover_style,      
+                                            ),
                                             rx.link(
                                                 "Pan-cancer Studies",
-                                                href="#",
+                                                href="/pan-cancer-studies",
                                                 _hover=hover_style,
                                             ),
                                             rx.link(
                                                 "Hereditary Cancer Syndromes Testing",
-                                                href="#",
+                                                href="/hereditary-cancer-syndromes-testing",
                                                 _hover=hover_style,
                                             ),
                                             rx.link(
                                                 "Tumor Microenvironment Studies",
-                                                href="#",
+                                                href="/tumor-microenvironment-studies",
                                                 _hover=hover_style,
                                             ),
                                             rx.link(
                                                 "Tumor Profiling",
-                                                href="#",
+                                                href="/tumor-profiling",
                                                 _hover=hover_style,
                                             ),
                                             rx.link(
                                                 "Liquid Biopsy",
-                                                href="#",
+                                                href="/liquid-biopsy",
                                                 _hover=hover_style,
                                             ),
                                             rx.link(
                                                 "Mutation Detection",
-                                                href="#",
+                                                href="/mutation-detection",
                                                 _hover=hover_style,
                                             ),
                                             rx.link(
                                                 "Biomarker Discovery",
-                                                href="#",
+                                                href="/biomarker-discovery",
                                                 _hover=hover_style,
                                             ),
                                             rx.link(
                                                 "Pharmacogenomics Testing",
-                                                href="#",
+                                                href="/pharmacogenomics-testing",
                                                 _hover=hover_style,
                                             ),
                                             align_items="start",
                                             spacing="1",
                                         ),
                                         rx.vstack(
-                                            rx.text("NGS Services", weight="medium"),
+                                            rx.link(
+                                                rx.text("NGS Services", weight="medium"),
+                                                href="/ngs-services",
+                                                _hover=hover_style,   
+                                            ),
                                             rx.link(
                                                 "Library Preparation",
-                                                href="#",
+                                                href="/library-preparation",
                                                 _hover=hover_style,
                                             ),
                                             rx.link(
                                                 "Sequencing Platforms",
-                                                href="#",
+                                                href="/sequencing-platforms",
                                                 _hover=hover_style,
                                             ),
                                             rx.link(
                                                 "Bioinformatics Analysis",
-                                                href="#",
+                                                href="/bioinformatics-analysis",
                                                 _hover=hover_style,
                                             ),
                                             rx.link(
                                                 "Data Interpretation",
-                                                href="#",
+                                                href="/data-interpretation",
                                                 _hover=hover_style,
                                             ),
                                             align_items="start",
                                             spacing="1",
                                         ),
                                         rx.vstack(
-                                            rx.text(
+                                            rx.link(
+                                                rx.text(
                                                 "Key Area of NGS Services",
                                                 weight="medium",
                                             ),
+                                                href="/key-areas-ngs-services",
+                                                _hover=hover_style,  
+                                            ),
                                             rx.link(
                                                 "Whole Genome Sequencing (WGS)",
-                                                href="#",
+                                                href="/whole-genome-sequencing",
                                                 _hover=hover_style,
                                             ),
                                             rx.link(
                                                 "Whole Exome Sequencing (WES)",
-                                                href="#",
+                                                href="/whole-exome-sequencing",
                                                 _hover=hover_style,
                                             ),
                                             rx.link(
                                                 "Targeted Sequencing",
-                                                href="#",
+                                                href="/targeted-sequencing",
                                                 _hover=hover_style,
                                             ),
                                             rx.link(
                                                 "RNA Sequencing (RNA-Seq)",
-                                                href="#",
+                                                href="/rna-sequencing",
                                                 _hover=hover_style,
                                             ),
                                             rx.link(
                                                 "Single-cell Sequencing",
-                                                href="#",
+                                                href="/single-cell-sequencing",
                                                 _hover=hover_style,
                                             ),
                                             rx.link(
                                                 "Metagenomics Testing",
-                                                href="#",
+                                                href="/metagenomics-testing",
                                                 _hover=hover_style,
                                             ),
                                             align_items="start",
@@ -334,17 +358,17 @@ def navbar_white() -> rx.Component:
                             rx.menu.sub_content(
                                 rx.menu.item("Diagnostics Services", on_click=lambda: redirect("/diagnostic-services")),
                                 rx.menu.item("Research Services", on_click=lambda: redirect("/research-services")),
-                                rx.menu.item("Human Oncology Testing"),
-                                rx.menu.item("Infectious Disease Testing"),
-                                rx.menu.item("Genetic Disorders Testing"),
-                                rx.menu.item("Cancer Research"),
-                                rx.menu.item("NGS Services"),
-                                rx.menu.item("WGS"),
-                                rx.menu.item("WES"),
-                                rx.menu.item("Targeted Sequencing"),
-                                rx.menu.item("RNA Sequencing (RNA-Seq)"),
-                                rx.menu.item("Single-cell Sequencing"),
-                                rx.menu.item("Metagenomics Testing"),
+                                rx.menu.item("Human Oncology Testing", on_click=lambda: redirect("/human-oncology-inherited-disease-testing")),
+                                rx.menu.item("Infectious Disease Testing", on_click=lambda: redirect("/infectious-disease")),
+                                rx.menu.item("Genetic Disorders Testing", on_click=lambda: redirect("/genetic-disorders")),
+                                rx.menu.item("Cancer Research" , on_click=lambda: redirect("/cancer-research")),
+                                rx.menu.item("NGS Services", on_click=lambda: redirect("/ngs-services")),
+                                rx.menu.item("WGS", on_click=lambda: redirect("/whole-genome-sequencing")),
+                                rx.menu.item("WES", on_click=lambda: redirect("/whole-exome-sequencing")),
+                                rx.menu.item("Targeted Sequencing", on_click=lambda: redirect("/targeted-sequencing")),
+                                rx.menu.item("RNA Sequencing (RNA-Seq)", on_click=lambda: redirect("/rna-sequencing")),
+                                rx.menu.item("Single-cell Sequencing", on_click=lambda: redirect("/single-cell-sequencing")),
+                                rx.menu.item("Metagenomics Testing", on_click=lambda: redirect("/metagenomics-testing")),
                             ),
                         ),
                         rx.menu.item("Contact", on_click=lambda: redirect("/contact")),
