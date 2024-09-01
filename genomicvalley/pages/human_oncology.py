@@ -112,7 +112,7 @@ def human_oncology_inherited_disease_testing():
         rx.mobile_and_tablet( # Start of mobile layout
             rx.vstack(
                 navbar(),
-                banner("Human Oncology and Inherited Disease Testing"),
+                banner("Human Oncology"),
                 rx.box(
                     rx.vstack(
                         rx.text(
