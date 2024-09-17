@@ -31,6 +31,18 @@ image_urls = [
     "/Community Health Support.jpg",
 ]
 
+button_style = {
+    "background_color": "teal",
+    "color": "white",
+    "font_size": "1.4rem",
+    "padding": "0.75rem 1.5rem",
+    "border_radius": "0.5rem",
+    "cursor": "pointer",
+    "width": "fit-content",
+    "margin": "2rem auto",  # Centers the button horizontally
+}
+
+
 @rx.page(route="/rna-sequencing", title="RNA Sequencing")
 def rna_sequencing():
     return rx.section(
@@ -129,6 +141,11 @@ def rna_sequencing():
                                 margin_top="2rem",
                                 font_weight="bold",
                             ),
+                            rx.button(
+                                "Contact Us Today",
+                                on_click=rx.redirect("/contact"),
+                                style=button_style,
+                            )
                         ),
                         width="60vw",
                         p="4",
@@ -242,6 +259,11 @@ def rna_sequencing():
                             margin_top="2rem",
                             font_weight="bold",
                         ),
+                        rx.button(
+                                "Contact Us Today",
+                                on_click=rx.redirect("/contact"),
+                                style=button_style,
+                            )
                     ),
                     width="100%",
                     p="2",

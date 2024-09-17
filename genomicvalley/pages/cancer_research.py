@@ -18,6 +18,18 @@ mobile_paragraph_style = {
     "text-align": "justify",
 }
 
+button_style = {
+    "background_color": "teal",
+    "color": "white",
+    "font_size": "1.4rem",
+    "padding": "0.75rem 1.5rem",
+    "border_radius": "0.5rem",
+    "cursor": "pointer",
+    "width": "fit-content",
+    "margin": "2rem auto",  # Centers the button horizontally
+}
+
+
 @rx.page(route="/cancer-research", title="Cancer Research")
 def cancer_research():
     return rx.section(
@@ -240,6 +252,11 @@ def cancer_research():
                                 margin_left="2rem",
                                 style=paragraph_style
                             ),
+                            rx.button(
+                                "Contact Us Today",
+                                on_click=rx.redirect("/contact"),
+                                style=button_style,
+                            )
                         ),
                         width="60vw",
                         p="4",
@@ -470,6 +487,11 @@ def cancer_research():
                                 margin_left="2rem",
                                 style=mobile_paragraph_style
                             ),
+                            rx.button(
+                                "Contact Us Today",
+                                on_click=rx.redirect("/contact"),
+                                style=button_style,
+                            )
                     ),
                     width="100%",
                     p="4",

@@ -25,13 +25,24 @@ image_style = {
     "margin-bottom": "1rem",
 }
 
+button_style = {
+    "background_color": "teal",
+    "color": "white",
+    "font_size": "1.4rem",
+    "padding": "0.75rem 1.5rem",
+    "border_radius": "0.5rem",
+    "cursor": "pointer",
+    "width": "fit-content",
+    "margin": "2rem auto",  # Centers the button horizontally
+}
+
 @rx.page(route="/human-oncology-inherited-disease-testing", title="Human Oncology and Inherited Disease Testing")
 def human_oncology_inherited_disease_testing():
     return rx.section(
         rx.desktop_only(  # Start of desktop layout
             rx.vstack(
                 navbar(),
-                banner("Human Oncology and Inherited Disease Testing"),
+                banner("Human Oncology"),
                 rx.flex(
                     rx.box(
                         rx.vstack(
@@ -95,6 +106,12 @@ def human_oncology_inherited_disease_testing():
                                 margin_top="2rem",
                                 font_weight="bold",
                             ),
+                            rx.button(
+                                "Contact Us Today",
+                                on_click=rx.redirect("/contact"),
+                                style=button_style,
+                                margin_top="1rem",
+                            )
                         ),
                         width="60vw",
                         p="4",
@@ -175,6 +192,12 @@ def human_oncology_inherited_disease_testing():
                             margin_top="2rem",
                             font_weight="bold",
                         ),
+                        rx.button(
+                                "Contact Us Today",
+                                on_click=rx.redirect("/contact"),
+                                style=button_style,
+                                margin_top="1rem",
+                            )
                     ),
                     width="100%",
                     p="2", # smaller padding for mobile

@@ -25,6 +25,18 @@ image_style = {
     "margin-bottom": "1rem",
 }
 
+button_style = {
+    "background_color": "teal",
+    "color": "white",
+    "font_size": "1.4rem",
+    "padding": "0.75rem 1.5rem",
+    "border_radius": "0.5rem",
+    "cursor": "pointer",
+    "width": "fit-content",
+    "margin": "2rem auto",  # Centers the button horizontally
+}
+
+
 @rx.page(route="/infectious-disease", title="Infectious Disease")
 def infectious_disease():
     return rx.section(
@@ -123,6 +135,11 @@ def infectious_disease():
                                 margin_top="2rem",
                                 font_weight="bold",
                             ),
+                            rx.button(
+                                "Contact Us Today",
+                                on_click=rx.redirect("/contact"),
+                                style=button_style,
+                            )
                         ),
                         width="60vw",
                         p="4",
@@ -231,6 +248,11 @@ def infectious_disease():
                             margin_top="2rem",
                             font_weight="bold",
                         ),
+                        rx.button(
+                                "Contact Us Today",
+                                on_click=rx.redirect("/contact"),
+                                style=button_style,
+                            )
                     ),
                     width="100%",
                     p="2",  # Smaller padding
