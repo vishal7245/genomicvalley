@@ -74,6 +74,7 @@ def navbar() -> rx.Component:
                     navbar_link("About Us", "/about"),
                     navbar_link("News", "/news"),
                     navbar_link("Careers", "/career"),
+                    navbar_link("Genetic Counseling", "/genetic-counseling"),
                     rx.hover_card.root(
                         rx.hover_card.trigger(
                             rx.button(
@@ -399,6 +400,7 @@ def navbar() -> rx.Component:
                         rx.menu.item("Collaborations", on_click=lambda: redirect("/collaborations")),
                         rx.menu.item("News", on_click=lambda: redirect("/news")),
                         rx.menu.item("Careers", on_click=lambda: redirect("/career")),
+                        rx.menu.item("Genetic Counseling", on_click=lambda: redirect("/genetic-counseling")),
                         rx.menu.sub(
                             rx.menu.sub_trigger("Services"),
                             rx.menu.sub_content(

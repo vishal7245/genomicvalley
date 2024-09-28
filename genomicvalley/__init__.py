@@ -43,7 +43,8 @@ from .pages import (
     tumour_microenvironment,
     tumour_profiling,
     whole_exome,
-    whole_genome
+    whole_genome,
+    genetic_counseling
 )
 
 __all__ = [
@@ -91,5 +92,6 @@ __all__ = [
     "tumour_microenvironment",
     "tumour_profiling",
     "whole_exome",
-    "whole_genome"
+    "whole_genome",
+    "genetic_counseling"
 ]
