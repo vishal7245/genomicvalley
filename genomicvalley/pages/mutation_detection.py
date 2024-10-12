@@ -230,5 +230,7 @@ def mutation_detection():
                 spacing="2"
             ),
             width="100%",
-        )
+        ),
+        margin="0",
+        padding="0",
     )

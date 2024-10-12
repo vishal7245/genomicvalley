@@ -225,5 +225,7 @@ def genetic_testing_and_screening():
                 spacing="2" # smaller spacing for mobile 
             ),
             width="100%",
-        ) # End of mobile layout
+        ),
+        margin="0",
+        padding="0",
     )

@@ -239,6 +239,8 @@ def targeted_sequencing():
             width="100%",
             padding="0px",
         ),
+        margin="0",
+        padding="0",
     )
 
 

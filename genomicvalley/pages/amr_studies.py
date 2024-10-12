@@ -211,5 +211,7 @@ def amr_studies():
                 spacing="2" # smaller spacing for mobile 
             ),
             width="100%",
-        ) # End of mobile layout
+        ),
+        margin="0",
+        padding="0",
     )

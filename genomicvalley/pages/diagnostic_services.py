@@ -182,5 +182,6 @@ def diagnostic_services():
             width="100%",
         ),
         width="100%",
-        padding="0px",
+        margin="0",
+        padding="0",
     )

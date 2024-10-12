@@ -864,5 +864,7 @@ def human_oncology_inherited_disease_testing():
                 spacing="2",  # Smaller spacing for mobile
             ),
             width="100%",
-        )  # End of mobile layout
+        ),
+        margin="0",
+        padding="0",
     )

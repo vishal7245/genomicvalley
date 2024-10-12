@@ -442,5 +442,7 @@ def key_areas_ngs_services():
                 spacing="2"  # Smaller spacing
             ),
             width="100%",
-        )
+        ),
+        margin="0",
+        padding="0",
     )

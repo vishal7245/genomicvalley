@@ -263,5 +263,7 @@ def infectious_disease():
                 spacing="2"  # Smaller spacing
             ),
             width="100%",
-        )
+        ),
+        margin="0",
+        padding="0",
     )
