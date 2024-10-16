@@ -73,10 +73,14 @@ def genetic_counseling():
                                             font_size="1.2rem",
                                             color="gray",
                                         ),
-                                        rx.html(
-                                        """
-                                        <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_P8CArYDq7LRvC4" async> </script> </form>
-                                        """    
+                                        rx.link(
+                                            rx.button(
+                                                "Book Now",
+                                                size="3",
+                                                variant="solid",
+                                                color_scheme="teal",
+                                            ),
+                                            href="https://pages.razorpay.com/genetic-counseling",
                                         ),
                                         align_items="start",
                                     ),
@@ -349,19 +353,39 @@ def genetic_counseling():
                                 "At Genomic Valley Bharat Limited, we believe that personalized care and the integration of advanced genomics are essential to empowering individuals and families with the knowledge they need to make informed decisions about their health. Join us in our mission to revolutionize healthcare with expert genetic counseling.",
                                 style=paragraph_style,
                             ),
-                            rx.html(
-                                    """
-                                    <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_P8CArYDq7LRvC4" async> </script> </form>
-                                    """,    
-                                    ),
+                            rx.section(
+                                rx.hstack(
+                                    rx.link(
+                                            rx.button(
+                                                "Book Now",
+                                                size="3",
+                                                variant="solid",
+                                                color_scheme="teal",
+                                            ),
+                                            href="https://pages.razorpay.com/genetic-counseling",
+                                        ),
+                                    rx.link(
+                                            rx.button(
+                                                "Contact Us",
+                                                size="3",
+                                                variant="solid",
+                                                color_scheme="teal",
+                                            ),
+                                            href="/contact",
+                                        ),    
+                                ),
+                                width="100%",
+                                display="flex",         
+                                justify_content="center"  
+                            ),
                         ),
                         width="60vw",
                         p="4",
-                        padding="1rem",
+                        padding="3rem",
                     ),
                     width="100%",
                     justify="center",
-                    padding="1rem",
+                    padding="3rem",
                 ),
                 footer(),
             ),
@@ -396,11 +420,15 @@ def genetic_counseling():
                                     color="gray",
                                     margin_bottom="0.5rem",
                                 ),
-                                rx.html(
-                                    """
-                                    <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_P8CArYDq7LRvC4" async> </script> </form>
-                                    """    
-                                ),
+                                rx.link(
+                                            rx.button(
+                                                "Book Now",
+                                                size="3",
+                                                variant="solid",
+                                                color_scheme="teal",
+                                            ),
+                                            href="https://pages.razorpay.com/genetic-counseling",
+                                        ),
                             ),
                             direction="column",
                             align="center",
@@ -660,10 +688,30 @@ def genetic_counseling():
                             "At Genomic Valley Bharat Limited, we believe that personalized care and the integration of advanced genomics are essential to empowering individuals and families with the knowledge they need to make informed decisions about their health. Join us in our mission to revolutionize healthcare with expert genetic counseling.",
                             style=mobile_paragraph_style,
                         ),
-                        rx.html(
-                            """
-                            <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_P8CArYDq7LRvC4" async> </script> </form>
-                            """    
+                        rx.section(
+                                rx.hstack(
+                                    rx.link(
+                                            rx.button(
+                                                "Book Now",
+                                                size="3",
+                                                variant="solid",
+                                                color_scheme="teal",
+                                            ),
+                                            href="https://pages.razorpay.com/genetic-counseling",
+                                        ),
+                                    rx.link(
+                                            rx.button(
+                                                "Contact Us",
+                                                size="3",
+                                                variant="solid",
+                                                color_scheme="teal",
+                                            ),
+                                            href="/contact",
+                                        ),    
+                                ),
+                                width="100%",
+                                display="flex",         
+                                justify_content="center"  
                             ),
                     ),
                     width="100%",
