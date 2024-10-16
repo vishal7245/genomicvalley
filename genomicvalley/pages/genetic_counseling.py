@@ -413,22 +413,30 @@ def genetic_counseling():
                                     color="teal",
                                     font_weight="bold",
                                     margin_bottom="0.5rem",
+                                    text_align="center"  # Centering the text
                                 ),
                                 rx.text(
                                     "Geneticist/Consultant/Genetic Counselor",
                                     font_size="1rem",
                                     color="gray",
                                     margin_bottom="0.5rem",
+                                    text_align="center"  # Centering the text
                                 ),
                                 rx.link(
-                                            rx.button(
-                                                "Book Now",
-                                                size="3",
-                                                variant="solid",
-                                                color_scheme="teal",
-                                            ),
-                                            href="https://pages.razorpay.com/genetic-counseling",
-                                        ),
+                                    rx.button(
+                                        "Book Now",
+                                        size="3",
+                                        variant="solid",
+                                        color_scheme="teal",
+                                    ),
+                                    href="https://pages.razorpay.com/genetic-counseling",
+                                    text_align="center"  # Centering the link
+                                ),
+                                display="flex",           # Use flex display
+                                flex_direction="column",  # Stack elements vertically
+                                align_items="center",     # Center items horizontally
+                                justify_content="center", # Center items vertically
+                                text_align="center"       # Ensure text is centered
                             ),
                             direction="column",
                             align="center",
