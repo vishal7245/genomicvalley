@@ -42,11 +42,11 @@ def genetic_counseling():
                         size="9",
                         color="teal",
                         font_weight="bold",
-                        margin_bottom="5",
                         text_align="center"  # Centering the text
                     ),
                     width="100%",
                     display="flex",
+                    margin_bottom="2",
                     justify_content="center"  # Centering the section
                 ),
                 rx.flex(
@@ -57,7 +57,7 @@ def genetic_counseling():
                                     rx.image(
                                         src="/uzma.jpeg",
                                         alt="Dr. Uzma Shamim",
-                                        width="400px",
+                                        width="300px",
                                         border_radius="10%",
                                         margin_right="3"
                                     ),
@@ -379,13 +379,11 @@ def genetic_counseling():
                                 justify_content="center"  
                             ),
                         ),
-                        width="60vw",
+                        width="70vw",
                         p="4",
-                        padding="3rem",
                     ),
                     width="100%",
                     justify="center",
-                    padding="3rem",
                 ),
                 footer(),
             ),

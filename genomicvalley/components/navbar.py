@@ -72,7 +72,6 @@ def navbar() -> rx.Component:
                 rx.hstack(
                     navbar_link("Home", "/"),
                     navbar_link("About Us", "/about"),
-                    navbar_link("News", "/news"),
                     navbar_link("Careers", "/career"),
                     navbar_link("Genetic Counseling", "/genetic-counseling"),
                     rx.hover_card.root(
@@ -398,7 +397,6 @@ def navbar() -> rx.Component:
                         rx.menu.item("Home", on_click=lambda: redirect("/")),
                         rx.menu.item("About Us", on_click=lambda: redirect("/about")),
                         rx.menu.item("Collaborations", on_click=lambda: redirect("/collaborations")),
-                        rx.menu.item("News", on_click=lambda: redirect("/news")),
                         rx.menu.item("Careers", on_click=lambda: redirect("/career")),
                         rx.menu.item("Genetic Counseling", on_click=lambda: redirect("/genetic-counseling")),
                         rx.menu.sub(

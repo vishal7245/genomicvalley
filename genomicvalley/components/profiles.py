@@ -6,7 +6,7 @@ def yogesh_agrawal_profile():
                     
                     rx.box(
                         rx.heading("Current Position", size="4"),
-                        rx.text("Chairman and Managing Director of Genomic Valley Biotech Limited since its inception on 16th May 1994.")
+                        rx.text("Chairman and Managing Director of Genomic Valley Bharat since its inception on 16th May 1994.")
                     ),
                     
                     rx.box(
@@ -52,7 +52,7 @@ def yogesh_agrawal_profile():
                                     rx.list_item("Tied up with Bickel Biotechnology Limited, Israel for technology transfer."),
                                     rx.list_item("Promoted and incorporated Tushar Agri Business Consortium India Limited in May 1994 with co-promoters Shri S.I. Shervani, Geep Industrial Syndicate Limited, and Haryana Government through HSIIDC and HAIC."),
                                     rx.list_item("In 1996-97, became the sole promoter by buying back shares from Mr. Shervani, Geep, HSIIDC, and HAIC."),
-                                    rx.list_item("Rebranded the company as Genomic Valley Biotech Limited in 2001, advised by the then Prime Minister Shri Atal Behari Vajpayee.")
+                                    rx.list_item("Rebranded the company as Genomic Valley Bharat in 2001, advised by the then Prime Minister Shri Atal Behari Vajpayee.")
                                 )
                             )
                         )
@@ -85,7 +85,7 @@ def romasha_gupta_profile():
             
             rx.box(
                 rx.heading("Current Position", size="4"),
-                rx.text("Project Manager at Genomic Valley Biotech Limited")
+                rx.text("Project Manager at Genomic Valley Bharat")
             ),
             
             rx.box(
@@ -237,7 +237,7 @@ def vipul_garg_profile():
         rx.box(
             rx.heading("Current Position", size="4"),
             rx.unordered_list(
-                rx.list_item("Handling Business Development and Corporate Strategy at Genomic Valley Biotech Limited")
+                rx.list_item("Handling Business Development and Corporate Strategy at Genomic Valley Bharat")
             )
         ),
         

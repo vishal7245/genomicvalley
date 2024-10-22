@@ -225,7 +225,7 @@ def key_areas_ngs_services():
                                 style=button_style,
                             )
                         ),
-                        width="60vw",
+                        width="70vw",
                         p="4",
                         padding="4rem",
                     ),

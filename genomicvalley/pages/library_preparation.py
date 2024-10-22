@@ -121,7 +121,7 @@ def library_preparation():
                                 style=button_style,
                             )
                         ),
-                        width="60vw",
+                        width="70vw",
                         p="4",
                         padding="4rem",
                     ),

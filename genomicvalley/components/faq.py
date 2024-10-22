@@ -10,7 +10,7 @@ def accordion_faq() -> rx.Component:
     return rx.section(
         rx.accordion.root(
             rx.accordion.item(
-                header="What are the primary diagnostic services offered by Genomic Valley Biotech Limited?",
+                header="What are the primary diagnostic services offered by Genomic Valley Bharat?",
                 content=rx.text(
                     "We specialize in Next-Generation Sequencing (NGS)-based molecular diagnostics, focusing on identifying genetic mutations and abnormalities with advanced AI integration. Our services enable early detection and personalized treatment plans, particularly in oncology.",
                     padding="15px 20px",
@@ -34,7 +34,7 @@ def accordion_faq() -> rx.Component:
                 ),
             ),
             rx.accordion.item(
-                header="How does Genomic Valley Biotech Limited support community health through genomic initiatives?",
+                header="How does Genomic Valley Bharat support community health through genomic initiatives?",
                 content=rx.text(
                     "We envision to integrate AI into NGS to conduct population-wide genetic screening aimed at improving public health outcomes. Our initiatives will help identify prevalent health risks and design targeted community health programs for disease prevention and management.",
                     padding="15px 20px",
@@ -42,7 +42,7 @@ def accordion_faq() -> rx.Component:
                 ),
             ),
             rx.accordion.item(
-                header="How does Genomic Valley Biotech Limited contribute to oncology research?",
+                header="How does Genomic Valley Bharat contribute to oncology research?",
                 content=rx.text(
                     "We leverage over a decade of experience in NGS and AI to pioneer advancements in cancer research. Our focus includes uncovering novel biomarkers and genetic insights, collaborating with leading institutions to develop more effective diagnostic tools and therapeutic strategies.",
                     padding="15px 20px",
@@ -64,7 +64,7 @@ def mobile_accordion_faq() -> rx.Component:
     return rx.section(
         rx.accordion.root(
             rx.accordion.item(
-                header="What are the primary diagnostic services offered by Genomic Valley Biotech Limited?",
+                header="What are the primary diagnostic services offered by Genomic Valley Bharat?",
                 content=rx.text(
                     "We specialize in Next-Generation Sequencing (NGS)-based molecular diagnostics, focusing on identifying genetic mutations and abnormalities with advanced AI integration. Our services enable early detection and personalized treatment plans, particularly in oncology.",
                     padding="15px 20px",
@@ -88,7 +88,7 @@ def mobile_accordion_faq() -> rx.Component:
                 ),
             ),
             rx.accordion.item(
-                header="How does Genomic Valley Biotech Limited support community health through genomic initiatives?",
+                header="How does Genomic Valley Bharat support community health through genomic initiatives?",
                 content=rx.text(
                     "We envision integrating AI into NGS to conduct population-wide genetic screening aimed at improving public health outcomes. Our initiatives will help identify prevalent health risks and design targeted community health programs for disease prevention and management.",
                     padding="15px 20px",
@@ -96,7 +96,7 @@ def mobile_accordion_faq() -> rx.Component:
                 ),
             ),
             rx.accordion.item(
-                header="How does Genomic Valley Biotech Limited contribute to oncology research?",
+                header="How does Genomic Valley Bharat contribute to oncology research?",
                 content=rx.text(
                     "We leverage over a decade of experience in NGS and AI to pioneer advancements in cancer research. Our focus includes uncovering novel biomarkers and genetic insights, collaborating with leading institutions to develop more effective diagnostic tools and therapeutic strategies.",
                     padding="15px 20px",

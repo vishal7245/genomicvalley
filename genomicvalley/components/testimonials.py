@@ -110,17 +110,17 @@ def testimonials_section() -> rx.Component:
                         card(
                             "Amit",
                             "@DrAmit",
-                            "Genomic Valley Biotech Limited will be a trailblazer in integrating Next-Generation Sequencing and AI into healthcare. Their expertise and commitment to innovation will be evident in the precision and reliability of their diagnostic services. As a healthcare provider, I will trust their data and solutions to enhance patient outcomes and support informed decision-making.",
+                            "Genomic Valley Bharat will be a trailblazer in integrating Next-Generation Sequencing and AI into healthcare. Their expertise and commitment to innovation will be evident in the precision and reliability of their diagnostic services. As a healthcare provider, I will trust their data and solutions to enhance patient outcomes and support informed decision-making.",
                         ),
                         card(
                             "Mohit",
                             "@DrMohit",
-                            "Genomic Valley Biotech Limited will be transformative. Their advanced AI-based genome healthcare research will provide us with invaluable insights into genetic patterns, driving innovation in our personalized medicine approaches. Their dedication to excellence and cutting-edge technology will be truly commendable.",
+                            "Genomic Valley Bharat will be transformative. Their advanced AI-based genome healthcare research will provide us with invaluable insights into genetic patterns, driving innovation in our personalized medicine approaches. Their dedication to excellence and cutting-edge technology will be truly commendable.",
                         ),
                         card(
                             "Shikha",
                             "@DrShikha",
-                            "The personalized healthcare services at Genomic Valley Biotech Limited will revolutionize our approach to patient care. By tailoring treatments based on unique genetic profiles, they will ensure our patients receive the most effective therapies with minimal adverse effects. Their expertise in NGS and AI will be unmatched, making them an invaluable partner in our healthcare journey.",
+                            "The personalized healthcare services at Genomic Valley Bharat will revolutionize our approach to patient care. By tailoring treatments based on unique genetic profiles, they will ensure our patients receive the most effective therapies with minimal adverse effects. Their expertise in NGS and AI will be unmatched, making them an invaluable partner in our healthcare journey.",
                         ),
                         columns="3",
                         spacing="5",
@@ -167,17 +167,17 @@ def testimonials_section() -> rx.Component:
                     mobile_card(
                         "Amit",
                         "@DrAmit",
-                        "Genomic Valley Biotech Limited will be a trailblazer in integrating Next-Generation Sequencing and AI into healthcare. Their expertise and commitment to innovation will be evident in the precision and reliability of their diagnostic services. As a healthcare provider, I will trust their data and solutions to enhance patient outcomes and support informed decision-making.",
+                        "Genomic Valley Bharat will be a trailblazer in integrating Next-Generation Sequencing and AI into healthcare. Their expertise and commitment to innovation will be evident in the precision and reliability of their diagnostic services. As a healthcare provider, I will trust their data and solutions to enhance patient outcomes and support informed decision-making.",
                     ),
                     mobile_card(
                         "Mohit",
                         "@DrMohit",
-                        "Genomic Valley Biotech Limited will be transformative. Their advanced AI-based genome healthcare research will provide us with invaluable insights into genetic patterns, driving innovation in our personalized medicine approaches. Their dedication to excellence and cutting-edge technology will be truly commendable.",
+                        "Genomic Valley Bharat will be transformative. Their advanced AI-based genome healthcare research will provide us with invaluable insights into genetic patterns, driving innovation in our personalized medicine approaches. Their dedication to excellence and cutting-edge technology will be truly commendable.",
                     ),
                     mobile_card(
                         "Shikha",
                         "@DrShikha",
-                        "The personalized healthcare services at Genomic Valley Biotech Limited will revolutionize our approach to patient care. By tailoring treatments based on unique genetic profiles, they will ensure our patients receive the most effective therapies with minimal adverse effects. Their expertise in NGS and AI will be unmatched, making them an invaluable partner in our healthcare journey.",
+                        "The personalized healthcare services at Genomic Valley Bharat will revolutionize our approach to patient care. By tailoring treatments based on unique genetic profiles, they will ensure our patients receive the most effective therapies with minimal adverse effects. Their expertise in NGS and AI will be unmatched, making them an invaluable partner in our healthcare journey.",
                     ),
                     spacing="4",
                     width="100%",

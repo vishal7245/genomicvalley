@@ -516,7 +516,7 @@ def career_form() -> rx.Component:
                         name="certifications",
                     ),
                     text_area_field(
-                        label="Why do you want to work at Genomic Valley Biotech Limited?: ",
+                        label="Why do you want to work at Genomic Valley Bharat?: ",
                         placeholder="Your Response",
                         name="why_work",
                     ),

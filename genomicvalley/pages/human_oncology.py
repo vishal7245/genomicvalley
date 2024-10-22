@@ -441,7 +441,7 @@ def human_oncology_inherited_disease_testing():
                                 margin_top="1rem",
                             )
                         ),
-                        width="60vw",
+                        width="70vw",
                         p="4",
                         padding="4rem",
                     ),

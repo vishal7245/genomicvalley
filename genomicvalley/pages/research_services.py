@@ -46,7 +46,7 @@ def research_services():
                         rx.box(
                             rx.vstack(
                                 rx.text(
-                                    "Our research services at Genomic Valley Biotech Limited focus on pioneering advancements in oncology through the application of Next-Generation Sequencing (NGS) and artificial intelligence. With over a decade of experience, our team is dedicated to exploring new frontiers in cancer research, utilizing NGS to uncover novel biomarkers and genetic insights. We collaborate with leading academic and industry partners to translate these discoveries into practical solutions, driving innovation and enhancing the understanding of cancer biology. Our goal is to contribute to the development of more effective diagnostic tools and therapeutic strategies, ultimately advancing the field of oncology research.",
+                                    "Our research services at Genomic Valley Bharat focus on pioneering advancements in oncology through the application of Next-Generation Sequencing (NGS) and artificial intelligence. With over a decade of experience, our team is dedicated to exploring new frontiers in cancer research, utilizing NGS to uncover novel biomarkers and genetic insights. We collaborate with leading academic and industry partners to translate these discoveries into practical solutions, driving innovation and enhancing the understanding of cancer biology. Our goal is to contribute to the development of more effective diagnostic tools and therapeutic strategies, ultimately advancing the field of oncology research.",
                                     style=paragraph_style,
                                 ),
                                 rx.heading(
@@ -58,7 +58,7 @@ def research_services():
                                     font_weight="bold",
                                 ),
                                 rx.text(
-                                    "At Genomic Valley Biotech Limited, we are pioneering AI-based genome healthcare research to revolutionize the way genetic data is analyzed and interpreted. By developing sophisticated AI algorithms and machine learning models, we enhance the accuracy and speed of genomic diagnostics and research. This approach allows us to uncover complex genetic patterns and associations, driving innovations in personalized medicine and therapeutic strategies.",
+                                    "At Genomic Valley Bharat, we are pioneering AI-based genome healthcare research to revolutionize the way genetic data is analyzed and interpreted. By developing sophisticated AI algorithms and machine learning models, we enhance the accuracy and speed of genomic diagnostics and research. This approach allows us to uncover complex genetic patterns and associations, driving innovations in personalized medicine and therapeutic strategies.",
                                     style=paragraph_style,
                                 ),
                                 rx.heading(
@@ -118,7 +118,7 @@ def research_services():
                 rx.box(
                     rx.vstack(
                         rx.text(
-                            "Our research services at Genomic Valley Biotech Limited focus on pioneering advancements in oncology through the application of Next-Generation Sequencing (NGS) and artificial intelligence. With over a decade of experience, our team is dedicated to exploring new frontiers in cancer research, utilizing NGS to uncover novel biomarkers and genetic insights. We collaborate with leading academic and industry partners to translate these discoveries into practical solutions, driving innovation and enhancing the understanding of cancer biology. Our goal is to contribute to the development of more effective diagnostic tools and therapeutic strategies, ultimately advancing the field of oncology research.",
+                            "Our research services at Genomic Valley Bharat focus on pioneering advancements in oncology through the application of Next-Generation Sequencing (NGS) and artificial intelligence. With over a decade of experience, our team is dedicated to exploring new frontiers in cancer research, utilizing NGS to uncover novel biomarkers and genetic insights. We collaborate with leading academic and industry partners to translate these discoveries into practical solutions, driving innovation and enhancing the understanding of cancer biology. Our goal is to contribute to the development of more effective diagnostic tools and therapeutic strategies, ultimately advancing the field of oncology research.",
                             style=mobile_paragraph_style,
                         ),
                         rx.heading(
@@ -131,7 +131,7 @@ def research_services():
                             id="ai-based-genome-healthcare",
                         ),
                         rx.text(
-                            "At Genomic Valley Biotech Limited, we are pioneering AI-based genome healthcare research to revolutionize the way genetic data is analyzed and interpreted. By developing sophisticated AI algorithms and machine learning models, we enhance the accuracy and speed of genomic diagnostics and research. This approach allows us to uncover complex genetic patterns and associations, driving innovations in personalized medicine and therapeutic strategies.",
+                            "At Genomic Valley Bharat, we are pioneering AI-based genome healthcare research to revolutionize the way genetic data is analyzed and interpreted. By developing sophisticated AI algorithms and machine learning models, we enhance the accuracy and speed of genomic diagnostics and research. This approach allows us to uncover complex genetic patterns and associations, driving innovations in personalized medicine and therapeutic strategies.",
                             style=mobile_paragraph_style,
                         ),
                         rx.heading(

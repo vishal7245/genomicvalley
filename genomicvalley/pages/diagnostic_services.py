@@ -47,7 +47,7 @@ def diagnostic_services():
                         rx.box(
                             rx.vstack(
                                 rx.text(
-                                    "At Genomic Valley Biotech Limited, our diagnostic services harness the power of Next-Generation Sequencing (NGS) to deliver unparalleled precision in identifying genetic mutations and abnormalities. By integrating advanced AI technologies, we provide rapid and accurate molecular diagnostics, enabling early detection and personalized treatment plans for oncology patients. Our commitment to leveraging cutting-edge NGS ensures that healthcare providers have access to comprehensive and reliable data, empowering them to make informed decisions and improve patient outcomes.",
+                                    "At Genomic Valley Bharat, our diagnostic services harness the power of Next-Generation Sequencing (NGS) to deliver unparalleled precision in identifying genetic mutations and abnormalities. By integrating advanced AI technologies, we provide rapid and accurate molecular diagnostics, enabling early detection and personalized treatment plans for oncology patients. Our commitment to leveraging cutting-edge NGS ensures that healthcare providers have access to comprehensive and reliable data, empowering them to make informed decisions and improve patient outcomes.",
                                     style=paragraph_style,
                                 ),
                                 rx.heading(
@@ -59,7 +59,7 @@ def diagnostic_services():
                                     font_weight="bold",
                                 ),
                                 rx.text(
-                                    "Personalized healthcare at Genomic Valley Biotech Limited is centered on tailoring medical treatment to individual patients based on their unique genetic profiles. Utilizing Next-Generation Sequencing (NGS) and advanced AI technologies, we provide precise diagnostics that enable healthcare providers to design customized treatment plans. This approach enhances the effectiveness of therapies, minimizes adverse effects, and ensures that each patient receives the most suitable care for their specific genetic makeup.",
+                                    "Personalized healthcare at Genomic Valley Bharat is centered on tailoring medical treatment to individual patients based on their unique genetic profiles. Utilizing Next-Generation Sequencing (NGS) and advanced AI technologies, we provide precise diagnostics that enable healthcare providers to design customized treatment plans. This approach enhances the effectiveness of therapies, minimizes adverse effects, and ensures that each patient receives the most suitable care for their specific genetic makeup.",
                                     style=paragraph_style,
                                 ),
                                 rx.heading(
@@ -83,7 +83,7 @@ def diagnostic_services():
                                     font_weight="bold",
                                 ),
                                 rx.text(
-                                    "Community health support at Genomic Valley Biotech Limited aims to improve public health outcomes through comprehensive genomic screening programs. By integrating NGS and AI, we offer population-wide genetic testing to identify prevalent health risks and tailor community health initiatives accordingly. This service supports public health agencies and organizations in designing effective health programs, improving disease prevention, and enhancing the overall well-being of the community.",
+                                    "Community health support at Genomic Valley Bharat aims to improve public health outcomes through comprehensive genomic screening programs. By integrating NGS and AI, we offer population-wide genetic testing to identify prevalent health risks and tailor community health initiatives accordingly. This service supports public health agencies and organizations in designing effective health programs, improving disease prevention, and enhancing the overall well-being of the community.",
                                     style=paragraph_style,
                                 ),
                             ),
@@ -119,7 +119,7 @@ def diagnostic_services():
                 rx.box(
                     rx.vstack(
                         rx.text(
-                            "At Genomic Valley Biotech Limited, our diagnostic services harness the power of Next-Generation Sequencing (NGS) to deliver unparalleled precision in identifying genetic mutations and abnormalities. By integrating advanced AI technologies, we provide rapid and accurate molecular diagnostics, enabling early detection and personalized treatment plans for oncology patients. Our commitment to leveraging cutting-edge NGS ensures that healthcare providers have access to comprehensive and reliable data, empowering them to make informed decisions and improve patient outcomes.",
+                            "At Genomic Valley Bharat, our diagnostic services harness the power of Next-Generation Sequencing (NGS) to deliver unparalleled precision in identifying genetic mutations and abnormalities. By integrating advanced AI technologies, we provide rapid and accurate molecular diagnostics, enabling early detection and personalized treatment plans for oncology patients. Our commitment to leveraging cutting-edge NGS ensures that healthcare providers have access to comprehensive and reliable data, empowering them to make informed decisions and improve patient outcomes.",
                             style=mobile_paragraph_style,
                         ),
                         rx.heading(
@@ -132,7 +132,7 @@ def diagnostic_services():
                             id="personalized-healthcare",
                         ),
                         rx.text(
-                            "Personalized healthcare at Genomic Valley Biotech Limited is centered on tailoring medical treatment to individual patients based on their unique genetic profiles. Utilizing Next-Generation Sequencing (NGS) and advanced AI technologies, we provide precise diagnostics that enable healthcare providers to design customized treatment plans. This approach enhances the effectiveness of therapies, minimizes adverse effects, and ensures that each patient receives the most suitable care for their specific genetic makeup.",
+                            "Personalized healthcare at Genomic Valley Bharat is centered on tailoring medical treatment to individual patients based on their unique genetic profiles. Utilizing Next-Generation Sequencing (NGS) and advanced AI technologies, we provide precise diagnostics that enable healthcare providers to design customized treatment plans. This approach enhances the effectiveness of therapies, minimizes adverse effects, and ensures that each patient receives the most suitable care for their specific genetic makeup.",
                             style=mobile_paragraph_style,
                         ),
                         rx.heading(
@@ -158,7 +158,7 @@ def diagnostic_services():
                             id="community-health-support",
                         ),
                         rx.text(
-                            "Community health support at Genomic Valley Biotech Limited aims to improve public health outcomes through comprehensive genomic screening programs. By integrating NGS and AI, we offer population-wide genetic testing to identify prevalent health risks and tailor community health initiatives accordingly. This service supports public health agencies and organizations in designing effective health programs, improving disease prevention, and enhancing the overall well-being of the community.",
+                            "Community health support at Genomic Valley Bharat aims to improve public health outcomes through comprehensive genomic screening programs. By integrating NGS and AI, we offer population-wide genetic testing to identify prevalent health risks and tailor community health initiatives accordingly. This service supports public health agencies and organizations in designing effective health programs, improving disease prevention, and enhancing the overall well-being of the community.",
                             style=mobile_paragraph_style,
                         ),
                         rx.vstack(
