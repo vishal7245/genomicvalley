@@ -66,7 +66,7 @@ def video_section() -> rx.Component:
                         color="gray",
                     ),
                     rx.video(
-                        url="https://www.youtube.com/embed/9bZkp7q19f0",
+                        url="/lab-vid1.mp4",
                         width="90%",
                         height="auto",
                     ),
