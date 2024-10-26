@@ -43,7 +43,7 @@ def video_section() -> rx.Component:
             rx.section(
                 rx.vstack(
                     rx.heading(
-                        "VIDEO",
+                        "Lab Tour",
                         size="5",
                         weight="bold",
                         margin_bottom="1em",
@@ -51,7 +51,7 @@ def video_section() -> rx.Component:
                         align="center",
                     ),
                     rx.heading(
-                        "Our Introduction Video",
+                        "Our Laboratory Facilities",
                         size="6",
                         weight="medium",
                         color="black",
@@ -59,7 +59,7 @@ def video_section() -> rx.Component:
                         align="center",
                     ),
                     rx.text(
-                        "Watch this video to learn more about us.",
+                        "Watch this tour to learn more about us.",
                         size="4",
                         align="center",
                         margin_bottom="1em",
