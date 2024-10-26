@@ -42,6 +42,39 @@ class Carousel(rx.Component):
 
 carousel = Carousel.create
 
+all_images = [
+    "/c5.png",
+    "/labimg3.jpg",
+    "/c1.png",
+    "/c12.png",
+    "/labimg9.jpg",
+    "/labimg10.jpg",
+    "/c11.png",
+    "/c6.png",
+    "/labimg12.jpg",
+    "/c3.png",
+    "/labimg4.jpg",
+    "/c9.png",
+    "/labimg11.jpg",
+    "/c15.png",
+    "/labimg2.jpg",
+    "/c4.png",
+    "/labimg13.jpg",
+    "/labimg1.jpg",
+    "/labimg15.jpg",
+    "/c14.png",
+    "/labimg5.jpg",
+    "/c7.png",
+    "/c13.png",
+    "/labimg16.jpg",
+    "/c2.png",
+    "/labimg6.jpg",
+    "/labimg14.jpg",
+    "/labimg7.jpg",
+    "/c10.png",
+    "/c8.png",
+]
+
 
 def image_gallery() -> rx.Component:
     return rx.section(
@@ -100,22 +133,36 @@ def image_gallery() -> rx.Component:
                         </style>
                         <div class="carousel">
                             <div class="carousel-track">
-                                <div class="carousel-slide"><img src="/c1.png" alt="Image 1"></div>
-                                <div class="carousel-slide"><img src="/c2.png" alt="Image 2"></div>
-                                <div class="carousel-slide"><img src="/c3.png" alt="Image 3"></div>
-                                <div class="carousel-slide"><img src="/c4.png" alt="Image 4"></div>
                                 <div class="carousel-slide"><img src="/c5.png" alt="Image 5"></div>
-                                <div class="carousel-slide"><img src="/c6.png" alt="Image 6"></div>
-                                <div class="carousel-slide"><img src="/c7.png" alt="Image 7"></div>
-                                <div class="carousel-slide"><img src="/c8.png" alt="Image 8"></div>
-                                <div class="carousel-slide"><img src="/c9.png" alt="Image 1"></div>
-                                <div class="carousel-slide"><img src="/c10.png" alt="Image 2"></div>
-                                <div class="carousel-slide"><img src="/c11.png" alt="Image 3"></div>
+                                <div class="carousel-slide"><img src="/labimg3.jpg" alt="Lab Image 3"></div>
+                                <div class="carousel-slide"><img src="/c1.png" alt="Image 1"></div>
                                 <div class="carousel-slide"><img src="/c12.png" alt="Image 4"></div>
-                                <div class="carousel-slide"><img src="/c13.png" alt="Image 5"></div>
-                                <div class="carousel-slide"><img src="/c14.png" alt="Image 6"></div>
+                                <div class="carousel-slide"><img src="/labimg9.jpg" alt="Lab Image 9"></div>
+                                <div class="carousel-slide"><img src="/labimg10.jpg" alt="Lab Image 10"></div>
+                                <div class="carousel-slide"><img src="/c11.png" alt="Image 3"></div>
+                                <div class="carousel-slide"><img src="/c6.png" alt="Image 6"></div>
+                                <div class="carousel-slide"><img src="/labimg12.jpg" alt="Lab Image 12"></div>
+                                <div class="carousel-slide"><img src="/c3.png" alt="Image 3"></div>
+                                <div class="carousel-slide"><img src="/labimg4.jpg" alt="Lab Image 4"></div>
+                                <div class="carousel-slide"><img src="/c9.png" alt="Image 1"></div>
+                                <div class="carousel-slide"><img src="/labimg11.jpg" alt="Lab Image 11"></div>
                                 <div class="carousel-slide"><img src="/c15.png" alt="Image 7"></div>
-                                <div class="carousel-slide"><img src="/c16.png" alt="Image 8"></div>
+                                <div class="carousel-slide"><img src="/labimg2.jpg" alt="Lab Image 2"></div>
+                                <div class="carousel-slide"><img src="/c4.png" alt="Image 4"></div>
+                                <div class="carousel-slide"><img src="/labimg13.jpg" alt="Lab Image 13"></div>
+                                <div class="carousel-slide"><img src="/labimg1.jpg" alt="Lab Image 1"></div>
+                                <div class="carousel-slide"><img src="/labimg15.jpg" alt="Lab Image 15"></div>
+                                <div class="carousel-slide"><img src="/c14.png" alt="Image 6"></div>
+                                <div class="carousel-slide"><img src="/labimg5.jpg" alt="Lab Image 5"></div>
+                                <div class="carousel-slide"><img src="/c7.png" alt="Image 7"></div>
+                                <div class="carousel-slide"><img src="/c13.png" alt="Image 5"></div>
+                                <div class="carousel-slide"><img src="/labimg16.jpg" alt="Lab Image 16"></div>
+                                <div class="carousel-slide"><img src="/c2.png" alt="Image 2"></div>
+                                <div class="carousel-slide"><img src="/labimg6.jpg" alt="Lab Image 6"></div>
+                                <div class="carousel-slide"><img src="/labimg14.jpg" alt="Lab Image 14"></div>
+                                <div class="carousel-slide"><img src="/labimg7.jpg" alt="Lab Image 7"></div>
+                                <div class="carousel-slide"><img src="/c10.png" alt="Image 2"></div>
+                                <div class="carousel-slide"><img src="/c8.png" alt="Image 8"></div>
                             </div>
                         </div>
                         <script>
@@ -170,18 +217,18 @@ def image_gallery() -> rx.Component:
                     carousel(
                         *[
                             rx.image(
-                                src=f"/c{i}.png",
+                                src=image_src,
                                 width="100%",
-                                height="300px",  # Match the carousel height
-                                object_fit="contain",  # Changed to 'contain' to fit the entire image
-                                background_color="black",  # Optional: adds a background color
+                                height="300px",
+                                object_fit="contain",
+                                background_color="black",
                             )
-                            for i in range(1, 17)
+                            for image_src in all_images
                         ],
                     ),
                     width="100%",
                     max_width="100vw",
-                    height="300px",  # Fixed height
+                    height="300px",
                     overflow="hidden",
                     position="relative",
                     padding="0.5em",

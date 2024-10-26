@@ -2,9 +2,9 @@ import reflex as rx
 
 banner_style = {
     "width": "100%",
-    "height": "60vh",
+    "height": "40vh",
     "background-color": "hsla(231,0%,100%,1)",
-    "background-image": "url('/banner-bg.jpg')",
+    "background-image": "url('/banner1.jpg')",
     "background-size": "cover",
     "background-position": "center",
     "display": "flex",  # Added display flex
@@ -20,6 +20,7 @@ banner_card_style = {
     "backdrop-filter": "blur(60px)",
     "display": "inline-block",
     "max-width": "80%",
+    "margin-top": "50px"
 }
 
 
@@ -56,4 +57,6 @@ def banner(heading: str) -> rx.Component:
             )
         ),
         width="100%",
+        padding="0",
+        margin="0"
     )
