@@ -26,18 +26,55 @@ def video_section() -> rx.Component:
                         margin_bottom="1em",
                         color="gray",
                     ),
-                    rx.video(
-                        url="/lab-vid1.mp4",
-                        width="60%",
-                        height="auto",
+                    rx.box(
+                        rx.hstack(
+                            rx.vstack(
+                                rx.video(
+                                    url="/NGS-lab.mp4",
+                                    width="100%",
+                                    height="auto",
+                                ),
+                                rx.text(
+                                    "NGS Lab",
+                                    size="5",
+                                    align="center",
+                                    color="gray"
+                                ),
+                                spacing="0.5em",
+                                align_items="center",
+                                width="35%",  
+                            ),
+                            rx.vstack(
+                                rx.video(
+                                    url="/Pathology-lab.mp4",
+                                    width="100%",
+                                    height="auto",
+                                ),
+                                rx.text(
+                                    "Pathology Lab",
+                                    size="5",
+                                    align="center",
+                                    color="gray"
+                                ),
+                                spacing="0.5em",
+                                align_items="center",
+                                width="35%", 
+                            ),
+                            spacing="1em",
+                            align_items="flex-start",
+                            justify_content="center",
+                        ),
+                        width="100%",  
+                        margin="0 auto",
                     ),
-                    spacing="4",
+                    spacing="2em",
                     align_items="center",
                     justify_content="center",
                     width="100%",
                 ),
                 width="100%",
-            )
+                padding="2em",
+            ),
         ),
         rx.mobile_and_tablet(
             rx.section(
@@ -65,12 +102,49 @@ def video_section() -> rx.Component:
                         margin_bottom="1em",
                         color="gray",
                     ),
-                    rx.video(
-                        url="/lab-vid1.mp4",
-                        width="90%",
-                        height="auto",
+                    rx.box(
+                        rx.vstack(
+                            rx.vstack(
+                                rx.video(
+                                    url="/NGS-lab.mp4",
+                                    width="100%",
+                                    height="auto",
+                                ),
+                                rx.text(
+                                    "NGS Lab",
+                                    size="5",
+                                    align="center",
+                                    color="gray"
+                                ),
+                                spacing="0.5em",
+                                align_items="center",
+                                width="100%",
+                            ),
+                            rx.vstack(
+                                rx.video(
+                                    url="/Pathology-lab.mp4",
+                                    width="100%",
+                                    height="auto",
+                                ),
+                                rx.text(
+                                    "Pathology Lab",
+                                    size="5",
+                                    align="center",
+                                    color="gray"
+                                ),
+                                spacing="0.5em",
+                                align_items="center",
+                                width="100%",
+                            ),
+                            spacing="2em",
+                            width="100%",
+                            align_items="center",
+                        ),
+                        width="100%",
+                        align_items="center",
+                        justify_content="center",
                     ),
-                    spacing="4",
+                    spacing="2em",
                     align_items="center",
                     justify_content="center",
                     width="100%",

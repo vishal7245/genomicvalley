@@ -74,6 +74,7 @@ def navbar_white() -> rx.Component:
                     navbar_link("About Us", "/about"),
                     navbar_link("Careers", "/career"),
                     navbar_link("Genetic Counseling", "/genetic-counseling"),
+                    navbar_link("Plant Genomics", "/plant-genome"),
                     rx.hover_card.root(
                         rx.hover_card.trigger(
                             rx.button(
@@ -353,6 +354,7 @@ def navbar_white() -> rx.Component:
                         rx.menu.item("Collaborations", on_click=lambda: redirect("/collaborations")),
                         rx.menu.item("Careers", on_click=lambda: redirect("/career")),
                         rx.menu.item("Genetic Counseling", on_click=lambda: redirect("/genetic-counseling")),
+                        rx.menu.item("Plant Genomics", on_click=lambda: redirect("/plant-genome")),
                         rx.menu.sub(
                             rx.menu.sub_trigger("Services"),
                             rx.menu.sub_content(
