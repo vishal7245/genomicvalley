@@ -9,15 +9,13 @@ from genomicvalley.components.services import services_section
 from genomicvalley.components.image_gallery import image_gallery
 from genomicvalley.components.about_section import about_section
 from genomicvalley.components.hero import hero_section
-from genomicvalley.state import VisitorStats
 from genomicvalley.components.our_vision import vision_section
 from genomicvalley.components.career_form import career_form
-from genomicvalley.components.create_announcement import create_announcement
 from genomicvalley.components.testimonials import testimonials_section
 from genomicvalley.components.video_section import video_section
 
 
-@rx.page(title="Genomic Valley", on_load=VisitorStats.log_visitor)
+@rx.page(title="Genomic Valley")
 def index():
     return rx.vstack(
         navbar(),
