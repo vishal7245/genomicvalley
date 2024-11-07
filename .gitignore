@@ -8,3 +8,5 @@ alembic/
 assets/external/
 uploaded_files/
 venv
+postgres_data/
+redis_data/
