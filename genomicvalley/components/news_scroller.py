@@ -18,7 +18,6 @@ def news_scroller() -> rx.Component:
             rx.html(
                 f"""
                 <div style="display: flex;">
-                <p style="font-size: 25px; margin-left: 5%; padding-right:5px; color: #FDFFBA;">News:</p>
                 <marquee behavior="scroll" scrollamount="8" direction="left" style="font-size: 25px; color: #FDFFBA;">{news.news_list_string}</marquee>
                 </div>
                 """

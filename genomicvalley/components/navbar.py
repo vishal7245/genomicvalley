@@ -96,7 +96,7 @@ def navbar() -> rx.Component:
                             rx.vstack(
                                 rx.vstack(
                                     rx.link(
-                                        rx.text("Diagnostics Services", weight="bold"),
+                                        rx.text("Diagnostics Services", weight="bold", style={"color": "white"}),
                                         href="/diagnostic-services",
                                     ),
                                     rx.grid(
@@ -182,7 +182,7 @@ def navbar() -> rx.Component:
                                 ),
                                 rx.vstack(
                                     rx.link(
-                                        rx.text("Research Services", weight="bold"),
+                                        rx.text("Research Services", weight="bold", style={"color": "white"}),
                                         href="/research-services",
                                     ),
                                     rx.grid(
