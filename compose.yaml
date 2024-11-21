@@ -1,24 +1,20 @@
 services:
   web:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: vishal1908/genomicvalley:latest   
     ports:
-      - "3001:3001"  # Frontend port
-      - "8001:8001"  # Backend port
+      - "3001:3001"  
+      - "8001:8001"  
     environment:
-      - DATABASE_URL=${DATABASE_URL}
+      - DATABASE_URL=${team.DATABASE_URL}
       - REDIS_URL=redis://redis:6379
     depends_on:
       - redis
       - db
     restart: unless-stopped
-    # Enable watching for file changes
     volumes:
       - .:/app
       - /app/node_modules
       - /app/.web
-    # Override the CMD to include development mode features
     command: >
       sh -c "
         if [ -d alembic ]; then
@@ -38,9 +34,9 @@ services:
   db:
     image: postgres:15-alpine
     environment:
-      - POSTGRES_USER=${POSTGRES_USER:-postgres}
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-postgres}
-      - POSTGRES_DB=${POSTGRES_DB:-genomicvalley}
+      - POSTGRES_USER=${team.POSTGRES_USER:-postgres}
+      - POSTGRES_PASSWORD=${team.POSTGRES_PASSWORD:-postgres}
+      - POSTGRES_DB=${team.POSTGRES_DB:-genomicvalley}
     ports:
       - "5432:5432"
     volumes:
