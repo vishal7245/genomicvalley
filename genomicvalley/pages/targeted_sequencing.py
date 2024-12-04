@@ -40,6 +40,19 @@ button_style = {
 @rx.page(route="/targeted-sequencing", title="Targeted Sequencing")
 def targeted_sequencing():
     return rx.section(
+        rx.html(
+        """
+                <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-7C0KZ36E1J"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-7C0KZ36E1J');
+        </script>
+        """    
+        ),
         rx.desktop_only(  # Desktop layout
             rx.vstack(
                 navbar(),

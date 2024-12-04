@@ -18,6 +18,19 @@ from genomicvalley.components.video_section import video_section
 @rx.page(title="Genomic Valley")
 def index():
     return rx.vstack(
+        rx.html(
+        """
+                <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-7C0KZ36E1J"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-7C0KZ36E1J');
+        </script>
+        """    
+        ),
         navbar(),
         hero_section(),
         about_section(),

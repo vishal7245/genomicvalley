@@ -18,6 +18,19 @@ class State(rx.State):
 @rx.page(route="/[...path]")
 def page_not_found():
     return rx.vstack(
+        rx.html(
+        """
+                <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-7C0KZ36E1J"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-7C0KZ36E1J');
+        </script>
+        """    
+        ),
         navbar(),
         rx.box(style=hero_style),
         rx.text(f"404 - Page Not Found: /{State.not_found_path}"),

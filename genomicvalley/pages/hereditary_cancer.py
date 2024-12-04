@@ -40,6 +40,19 @@ button_style = {
 @rx.page(route="/hereditary-cancer-syndromes-testing", title="Hereditary Cancer Syndromes Testing")
 def hereditary_cancer_syndromes_testing():
     return rx.section(
+        rx.html(
+        """
+                <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-7C0KZ36E1J"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-7C0KZ36E1J');
+        </script>
+        """    
+        ),
         rx.desktop_only(  # Start of desktop layout
             rx.vstack(
                 navbar(),
